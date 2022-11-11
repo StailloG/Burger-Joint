@@ -48,5 +48,7 @@ public class WalkingToRestaurantScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         textDisplay.gameObject.SetActive(false);
+        //Destroys collider so text does not appear again
+        Destroy(gameObject);
     }
 }
