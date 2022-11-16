@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurgerAssembly : MonoBehaviour
+public class PickupDrop : MonoBehaviour
 {
     /* Variables */
     [Header("Trigger Check")]
-    private bool canPickUp = false;
+    public bool canPickUp = false;
     public int spacePressedAllowed = 0;
 
     [Header("Gameobjects")]
@@ -15,6 +15,7 @@ public class BurgerAssembly : MonoBehaviour
 
     [Header("Components")]
     private Rigidbody rb;
+
 
     private void Start()
     {
