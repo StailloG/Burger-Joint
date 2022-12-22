@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// To move camera and player for an effective first-person controller.
+/// </summary>
 public class CameraRotation : MonoBehaviour
 {
     public Transform playerBody; //transform camera with player body
@@ -13,7 +15,13 @@ public class CameraRotation : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    void FixedUpdate()
+    {
+       CameraControl();
+    }
+
+
+    private void CameraControl()
     {
         //call input access
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;

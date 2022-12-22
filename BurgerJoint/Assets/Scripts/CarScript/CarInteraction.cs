@@ -7,7 +7,7 @@ public class CarInteraction : MonoBehaviour
 {
     //variables
     public TextMeshProUGUI textDisplay;
-    public bool showText = false;
+    public bool isPlayerNear = false;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class CarInteraction : MonoBehaviour
 
     void Update()
     {
-        if (showText == true && Input.GetKeyDown(KeyCode.Space))
+        if (isPlayerNear == true && Input.GetKeyDown(KeyCode.Space))
         {
             textDisplay.gameObject.SetActive(true);
         }
@@ -27,15 +27,15 @@ public class CarInteraction : MonoBehaviour
      */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            showText = true;
+            isPlayerNear = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        showText = false;
+        isPlayerNear = false;
         StartCoroutine(TextFewSec());
     }
 

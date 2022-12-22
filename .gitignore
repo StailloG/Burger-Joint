@@ -9,7 +9,7 @@ BurgerJoint/[Bb]uild/
 BurgerJoint/[Bb]uilds/
 BurgerJoint/[Ll]ogs/
 BurgerJoint/[Uu]ser[Ss]ettings/
-a
+BurgerJoint/.idea/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -71,3 +71,4 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+BurgerJoint/.idea/.idea.BurgerJoint/.idea/encodings.xml

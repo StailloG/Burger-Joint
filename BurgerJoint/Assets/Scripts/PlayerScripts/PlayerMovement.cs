@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +10,22 @@ public class PlayerMovement : MonoBehaviour
     private float vInput;
     private CharacterController charController;
 
-    void Start()
+    void Awake()
     {
         charController = GetComponent<CharacterController>();
     }
 
-    void Update()
+    private void Start()
+    {
+       
+    }
+
+    void FixedUpdate()
+    {
+       HandleMovement();
+    }
+
+    private void HandleMovement()
     {
         //call horizontal & vertical inputs
         hInput = Input.GetAxis("Horizontal");

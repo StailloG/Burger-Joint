@@ -7,7 +7,7 @@ public class WalkingToRestaurantScript : MonoBehaviour
 {
     //variables
     public TextMeshProUGUI textDisplay;
-    public bool showText = false;
+    public bool isPlayerCollide = false;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class WalkingToRestaurantScript : MonoBehaviour
 
     void Update()
     {
-        if (showText == true)
+        if (isPlayerCollide == true)
         {
             textDisplay.gameObject.SetActive(true);
         }
@@ -28,15 +28,15 @@ public class WalkingToRestaurantScript : MonoBehaviour
      */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            showText = true;
+            isPlayerCollide = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        showText = false;
+        isPlayerCollide = false;
         StartCoroutine(TextFewSec());
     }
 
