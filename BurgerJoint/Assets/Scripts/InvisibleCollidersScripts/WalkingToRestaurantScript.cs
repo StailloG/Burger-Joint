@@ -36,7 +36,10 @@ public class WalkingToRestaurantScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        isPlayerCollide = false;
+        if (other.CompareTag("Player"))
+        {
+            isPlayerCollide = false;
+        }
         StartCoroutine(TextFewSec());
     }
 
