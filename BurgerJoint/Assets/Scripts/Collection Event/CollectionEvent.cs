@@ -17,32 +17,20 @@ public class CollectionEvent : MonoBehaviour
 
     public UnityEvent OnAllItemsCollected;
 
-    [SerializeField] private LayerMask itemLayer;
+    [SerializeField] private string tagName; //all items must be labeled with this tag
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log(itemLayer.value + " is the one we are looking for");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("yo triggered this mf before" + other.gameObject.layer);
-
         //if item has the layer we want 
-        if (other.gameObject.layer != itemLayer) return; 
-        Debug.Log("yo triggered this mf after" + other.gameObject.layer);
-        //and if the gameobject is the same as the one in neccesaryItems 
-        if (!IsGameObjectInNeccesaryItems(other.gameObject)) return; 
+        if (other.gameObject.CompareTag(tagName)) return; 
+        //and if the gameobject is the same as the one in neccesaryItems
+        //first we must take the parent(the box collider is a child of the game object)
+        var parentObj = other.gameObject.transform.parent.gameObject;
+        if (!IsGameObjectInNeccesaryItems(parentObj)) return; 
 
         //then we add it to the collection 
-        currentItemsInCollection.Add(other.gameObject);
+        currentItemsInCollection.Add(parentObj);
 
         //if all objects in currentItems is in neccesaryItems, then we send off an event 
         //first we "sort" them, so its easier to check if they are the same
@@ -58,11 +46,13 @@ public class CollectionEvent : MonoBehaviour
     {
         if (neccessaryItems.Count != currentItemsInCollection.Count) return false;
 
-
+        Debug.Log("problem is not count");
         for (int i = 0; i < neccessaryItems.Count; i++)
         {
             if (!GameObject.ReferenceEquals(neccessaryItems[i], currentItemsInCollection[i]))
             {
+                Debug.Log("these items are not the same, " + neccessaryItems[i].gameObject.name +  " " + currentItemsInCollection[i].gameObject.name);
+
                 return false;
             }
         }
@@ -75,6 +65,7 @@ public class CollectionEvent : MonoBehaviour
     //looping through neccesaryItems, checking if the gameobject is in it
     private bool IsGameObjectInNeccesaryItems(GameObject otherGameObject)
     {
+       
         foreach (var i in neccessaryItems)
         {
             if (GameObject.ReferenceEquals(i, otherGameObject))
@@ -88,7 +79,13 @@ public class CollectionEvent : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //if item has the layer we want 
-        //and if the gameobject is the same as the ine in neccesaryItems 
-        //then we remove it to the collection 
+        if (other.gameObject.CompareTag(tagName)) return; 
+        //and if the gameobject is the same as the one in neccesaryItems
+        //first we must take the parent(the box collider is a child of the game object)
+        var parentObj = other.gameObject.transform.parent.gameObject;
+        if (!IsGameObjectInNeccesaryItems(parentObj)) return; 
+
+        //then we add it to the collection 
+        currentItemsInCollection.Remove(parentObj);
     }
 }

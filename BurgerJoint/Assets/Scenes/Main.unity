@@ -1020,6 +1020,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2408144, y: 1, z: 2.5584757}
   m_Center: {x: 0.006958321, y: 0, z: -0.017208751}
+--- !u!1 &431091880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7714586782976375413, guid: f91d190bdabdf4a4b946a0809f9ae20d, type: 3}
+  m_PrefabInstance: {fileID: 7483652725820005367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &435916309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,6 +2295,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBody: {fileID: 1880173465}
   mouseSensitivity: 100
+--- !u!1 &987642074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4475483597780933043, guid: 2db01640c8c9ede40b5ac4cffd60cb2c, type: 3}
+  m_PrefabInstance: {fileID: 4901905344365699160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &994629001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3485,6 +3495,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432162086}
   m_CullTransparentMesh: 1
+--- !u!1 &1455188670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2753628754794556453, guid: 0ec198a49bb59cf4698b089babf08f7a, type: 3}
+  m_PrefabInstance: {fileID: 2621351783685446524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1469874447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5910100696773171190, guid: 96814431a25e2154480d43e94a8f1dae, type: 3}
+  m_PrefabInstance: {fileID: 4290009611525058261}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1486162671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3277057952337262747, guid: acab94f45c12b614bbebc0d29b12da88, type: 3}
@@ -4438,6 +4458,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neccessaryItems:
   - {fileID: 3317803633243015405}
+  - {fileID: 1455188670}
+  - {fileID: 2070969059}
+  - {fileID: 431091880}
+  - {fileID: 1469874447}
+  - {fileID: 987642074}
   currentItemsInCollection: []
   OnAllItemsCollected:
     m_PersistentCalls:
@@ -4454,9 +4479,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  itemLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  tagName: BurgerIngredient
 --- !u!4 &1874743435
 Transform:
   m_ObjectHideFlags: 0
@@ -5094,6 +5117,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4870167790249810, guid: ab26596a331d7ee43a3e9d29e2be9f84, type: 3}
   m_PrefabInstance: {fileID: 520217738}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2070969059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5066528681751493067, guid: a504885a570e6064f91a363a523a01b1, type: 3}
+  m_PrefabInstance: {fileID: 4083230290754255148}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2085721957
 GameObject:
   m_ObjectHideFlags: 0
@@ -5515,6 +5543,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2753628754794556453, guid: 0ec198a49bb59cf4698b089babf08f7a, type: 3}
+      propertyPath: m_TagString
+      value: BurgerIngredient
+      objectReference: {fileID: 0}
     - target: {fileID: 6363726980684448532, guid: 0ec198a49bb59cf4698b089babf08f7a, type: 3}
       propertyPath: m_Interpolate
       value: 0
@@ -5602,6 +5634,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9040430732588610412, guid: a3d8cda0b14d2894fbe4638366a03003, type: 3}
+      propertyPath: m_TagString
+      value: BurgerIngredient
+      objectReference: {fileID: 0}
     - target: {fileID: 9040430732588610413, guid: a3d8cda0b14d2894fbe4638366a03003, type: 3}
       propertyPath: m_Interpolate
       value: 0
@@ -5656,6 +5692,10 @@ PrefabInstance:
     - target: {fileID: 5066528681751493067, guid: a504885a570e6064f91a363a523a01b1, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066528681751493067, guid: a504885a570e6064f91a363a523a01b1, type: 3}
+      propertyPath: m_TagString
+      value: BurgerIngredient
       objectReference: {fileID: 0}
     - target: {fileID: 5353792858974314134, guid: a504885a570e6064f91a363a523a01b1, type: 3}
       propertyPath: m_RootOrder
@@ -5733,6 +5773,10 @@ PrefabInstance:
     - target: {fileID: 5910100696773171190, guid: 96814431a25e2154480d43e94a8f1dae, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910100696773171190, guid: 96814431a25e2154480d43e94a8f1dae, type: 3}
+      propertyPath: m_TagString
+      value: BurgerIngredient
       objectReference: {fileID: 0}
     - target: {fileID: 8652752198616230479, guid: 96814431a25e2154480d43e94a8f1dae, type: 3}
       propertyPath: m_RootOrder
@@ -5867,6 +5911,10 @@ PrefabInstance:
     - target: {fileID: 4475483597780933043, guid: 2db01640c8c9ede40b5ac4cffd60cb2c, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475483597780933043, guid: 2db01640c8c9ede40b5ac4cffd60cb2c, type: 3}
+      propertyPath: m_TagString
+      value: BurgerIngredient
       objectReference: {fileID: 0}
     - target: {fileID: 4475483597780933044, guid: 2db01640c8c9ede40b5ac4cffd60cb2c, type: 3}
       propertyPath: m_Enabled
@@ -6056,6 +6104,10 @@ PrefabInstance:
     - target: {fileID: 7714586782976375413, guid: f91d190bdabdf4a4b946a0809f9ae20d, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714586782976375413, guid: f91d190bdabdf4a4b946a0809f9ae20d, type: 3}
+      propertyPath: m_TagString
+      value: BurgerIngredient
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91d190bdabdf4a4b946a0809f9ae20d, type: 3}
