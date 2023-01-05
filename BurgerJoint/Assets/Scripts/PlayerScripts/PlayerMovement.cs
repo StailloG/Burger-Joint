@@ -15,10 +15,6 @@ public class PlayerMovement : MonoBehaviour
         charController = GetComponent<CharacterController>();
     }
 
-    private void Start()
-    {
-       
-    }
 
     void FixedUpdate()
     {
@@ -37,4 +33,11 @@ public class PlayerMovement : MonoBehaviour
         //mouse movement
         charController.Move(move * speed * Time.deltaTime);
     }
+
+    //Script to help other systems know when the player is moveing
+    public bool IsMoving()
+    {
+        return charController.velocity != Vector3.zero;
+    }
+    
 }
