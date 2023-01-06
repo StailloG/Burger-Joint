@@ -46,16 +46,17 @@ public class TodoListDisplay : MonoBehaviour
     }
 
     //if player is opening list from clipboard
-    public void OpenListFromClipboard()
+    private void OpenListFromClipboard()
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             displayList.enabled = true;
+            text.gameObject.SetActive(false);
         }
     }
 
     //list will disappear when player presses e
-    public void EscFromList()
+    private void EscFromList()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
