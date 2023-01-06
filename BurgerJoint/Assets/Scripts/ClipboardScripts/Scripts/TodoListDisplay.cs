@@ -16,7 +16,6 @@ public class TodoListDisplay : MonoBehaviour
     void Start()
     {
         text.gameObject.SetActive(false);
-
         displayList.enabled = false;
     }
 

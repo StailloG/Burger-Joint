@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Broom : MonoBehaviour
+public class PickUpObject : MonoBehaviour
 {
     private GameObject player;
 
@@ -14,19 +14,19 @@ public class Broom : MonoBehaviour
         player = GameObject.FindWithTag("Player");
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isPlayerNear == true)
         {
-            PickupBroom();
+            Pickup();
         }
 
-        DropBroom();
+        Drop();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             isPlayerNear = true;
         }
@@ -37,19 +37,19 @@ public class Broom : MonoBehaviour
         isPlayerNear = false;
     }
 
-    private void PickupBroom()
+    private void Pickup()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            gameObject.transform.parent = player.transform; //broom is child of player
+            gameObject.transform.parent = player.transform; //ojbect is child of player
         }
     }
 
-    private void DropBroom()
+    private void Drop()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            transform.parent = null; //drop broom
+            transform.parent = null; //drop object
         }
     }
 }
