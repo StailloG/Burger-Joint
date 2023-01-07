@@ -17,9 +17,9 @@ public class SweepingTask : MonoBehaviour
         gameObject.SetActive(false); //off until player picks up broom
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        HasBroom();
+        ActivateSweepGlow();
 
         /* if player is inside sweeping area &
          * has broom &
@@ -51,17 +51,16 @@ public class SweepingTask : MonoBehaviour
         Destroy(gameObject);
     }
 
-
-    //if player has broom, sweeping area glows
-    public void HasBroom()
+    public void ActivateSweepGlow()
     {
         if (hasItemScript.hasBroom == true)
         {
             gameObject.SetActive(true);
         }
-        else if (hasItemScript.hasBroom == false)
+        else
         {
             gameObject.SetActive(false);
         }
     }
+
 }
