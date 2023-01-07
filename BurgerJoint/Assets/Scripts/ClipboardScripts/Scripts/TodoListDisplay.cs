@@ -13,6 +13,7 @@ public class TodoListDisplay : MonoBehaviour
     [Header("Testing")]
     [SerializeField] private bool isPlayerNear = false;
 
+
     void Start()
     {
         text.gameObject.SetActive(false);

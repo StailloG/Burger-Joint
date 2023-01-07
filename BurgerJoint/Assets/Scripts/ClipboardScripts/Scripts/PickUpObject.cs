@@ -5,9 +5,13 @@ using UnityEngine;
 public class PickUpObject : MonoBehaviour
 {
     private GameObject player;
+    public GameObject taskItem; //drag gameobject that has this script
 
     [Header("Testing")]
     [SerializeField] private bool isPlayerNear = false;
+
+    [Header("Used in Other Scripts")]
+    public bool hasBroom = false;
 
     void Start()
     {
@@ -37,19 +41,26 @@ public class PickUpObject : MonoBehaviour
         isPlayerNear = false;
     }
 
-    private void Pickup()
+    public void Pickup()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             gameObject.transform.parent = player.transform; //ojbect is child of player
+
+            //if item is a broom
+            if (gameObject.CompareTag("Broom"))
+            {
+                hasBroom = true;
+            }
         }
     }
 
-    private void Drop()
+    public void Drop()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             transform.parent = null; //drop object
+            hasBroom = false;
         }
     }
 }
