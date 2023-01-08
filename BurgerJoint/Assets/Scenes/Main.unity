@@ -1794,6 +1794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerNear: 0
   glowArea: {fileID: 272643564}
+  sweepAmt: 0
 --- !u!114 &272643566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2730,6 +2731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerNear: 0
   glowArea: {fileID: 430739183}
+  sweepAmt: 0
 --- !u!114 &430739185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5389,6 +5391,20 @@ MonoBehaviour:
   text: {fileID: 1350712596}
   displayList: {fileID: 890624390}
   isPlayerNear: 0
+--- !u!114 &833472564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833472559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c522055bde9700f49b45174b1ccbb79f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sweepComplete: 0
+  num: 0
 --- !u!1 &862955216 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e5f6c578761bc4e41a03985bf01ba61b, type: 3}
@@ -7709,6 +7725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerNear: 0
   glowArea: {fileID: 1299807861}
+  sweepAmt: 0
 --- !u!114 &1299807863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9598,6 +9615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerNear: 0
   glowArea: {fileID: 1618686704}
+  sweepAmt: 0
 --- !u!65 &1621474208
 BoxCollider:
   m_ObjectHideFlags: 0

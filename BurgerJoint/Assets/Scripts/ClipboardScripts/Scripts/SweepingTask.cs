@@ -19,6 +19,9 @@ public class SweepingTask : MonoBehaviour
     PickUpObject hasItemScript;
     public GameObject glowArea;
 
+    [Header("Using in Other Scripts")]
+    public int sweepAmt = 0;
+
     void Start()
     {
         hasItemScript = FindObjectOfType<PickUpObject>();
@@ -57,7 +60,9 @@ public class SweepingTask : MonoBehaviour
     //deletes the area where player has swept
     private void Sweep()
     {
-        Destroy(glowArea);
+        sweepAmt += 1;
+        //Destroy(glowArea);
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
     /* if player is holding the broom, the glowing areas will active.

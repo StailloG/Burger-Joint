@@ -25,7 +25,7 @@ public class PickUpObject : MonoBehaviour
     [Header("Testing")]
     [SerializeField] private bool isPlayerNear = false;
 
-    [Header("Used in Other Scripts")]
+    [Header("Using in Other Scripts")]
     public bool hasBroom = false;
 
     void Start()
