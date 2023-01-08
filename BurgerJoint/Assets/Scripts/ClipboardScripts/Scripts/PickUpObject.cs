@@ -2,6 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * If the player is near the task items (broom, cloth, & ingredients),
+ * the player will be able to press spacebar to pick up those items.
+ * 
+ * Once the player picks up an item, that item will then be a child of the player.
+ * When the player drops an item, that item will not be the child of the player anymore.
+ * 
+ * In the Pickup() method, when the player picks up an item,
+ * there will be CompareTags to determine which item it is that the player picked up.
+ * Depending on that item, that is when the task of that item will begin to glow in other scripts, such as:
+ *      SweepingTask.cs
+ *      ClothTask.cs (have yet to complete)
+ *      IngredientsTask.cs (have yet to complete)
+ */
+
 public class PickUpObject : MonoBehaviour
 {
     private GameObject player;
@@ -18,7 +33,7 @@ public class PickUpObject : MonoBehaviour
         player = GameObject.FindWithTag("Player");
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (isPlayerNear == true)
         {

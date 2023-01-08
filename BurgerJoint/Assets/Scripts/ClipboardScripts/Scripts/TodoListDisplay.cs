@@ -4,9 +4,14 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+/*
+ * Displays to-do list as a UI canvas when player is near clipboard & presses spacebar.
+ * The to-do list will not go away until the player presses 'E'.
+ */
+
 public class TodoListDisplay : MonoBehaviour
 {
-    [Header("Gameibjects")]
+    [Header("GameObjects")]
     public TextMeshProUGUI text;
     public Image displayList;
 

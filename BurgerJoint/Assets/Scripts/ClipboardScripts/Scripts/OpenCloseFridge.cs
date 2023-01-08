@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Opens the fridge when player presses spacebar.
+ * Closes the fridge when the fridge is open & player presses spacebar.
+ */
+
 public class OpenCloseFridge : MonoBehaviour
 {
     [Header("Testing")]
@@ -14,7 +19,6 @@ public class OpenCloseFridge : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        
     }
 
     void Update()

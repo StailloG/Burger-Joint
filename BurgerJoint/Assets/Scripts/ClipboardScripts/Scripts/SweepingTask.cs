@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Whenever player picks up the broom, areas placed inside the restaurant will start to glow.
+ * The glowing areas indicate where the player will have to sweep.
+ * Once the player sweeps the area by pressing spacebar, the glowing area will disappear.
+ * 
+ * Once all glowing areas disappear, the player has completed the sweeping task.
+ */
+
 public class SweepingTask : MonoBehaviour
 {
     [Header("Testing")]
@@ -9,17 +17,18 @@ public class SweepingTask : MonoBehaviour
 
     [Header("Activate Sweep Task")]
     PickUpObject hasItemScript;
+    public GameObject glowArea;
 
     void Start()
     {
         hasItemScript = FindObjectOfType<PickUpObject>();
 
-        gameObject.SetActive(false); //off until player picks up broom
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
     void Update()
     {
-        ActivateSweepGlow();
+        ActivateGlow();
 
         /* if player is inside sweeping area &
          * has broom &
@@ -45,21 +54,24 @@ public class SweepingTask : MonoBehaviour
         isPlayerNear = false;
     }
 
-    //deletes the area where player has to sweep
+    //deletes the area where player has swept
     private void Sweep()
     {
-        Destroy(gameObject);
+        Destroy(glowArea);
     }
 
-    public void ActivateSweepGlow()
+    /* if player is holding the broom, the glowing areas will active.
+     * if not, the glowing areas will disappear.
+     */
+    public void ActivateGlow()
     {
         if (hasItemScript.hasBroom == true)
         {
-            gameObject.SetActive(true);
+            GetComponent<MeshRenderer>().enabled = true;
         }
         else
         {
-            gameObject.SetActive(false);
+            GetComponent<MeshRenderer>().enabled = false;
         }
     }
 
