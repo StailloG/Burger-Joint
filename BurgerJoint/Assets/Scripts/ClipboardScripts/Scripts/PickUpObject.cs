@@ -15,6 +15,8 @@ using UnityEngine;
  *      SweepingTask.cs
  *      ClothTask.cs (have yet to complete)
  *      IngredientsTask.cs (have yet to complete)
+ *      
+ * Place this script on the task items (broom, cloth, & ingredients).
  */
 
 public class PickUpObject : MonoBehaviour
@@ -27,6 +29,7 @@ public class PickUpObject : MonoBehaviour
 
     [Header("Using in Other Scripts")]
     public bool hasBroom = false;
+    public bool hasCloth = false;
 
     void Start()
     {
@@ -63,10 +66,11 @@ public class PickUpObject : MonoBehaviour
             gameObject.transform.parent = player.transform; //ojbect is child of player
 
             //if item is a broom
-            if (gameObject.CompareTag("Broom"))
-            {
-                hasBroom = true;
-            }
+            DetermineItem("Broom", ref hasBroom);
+            //if item is a cloth
+            DetermineItem("Cloth", ref hasCloth);
+            //if item is an ingredient
+            //DetermineItem("Ingredient", ref hasIngredient);
         }
     }
 
@@ -75,7 +79,22 @@ public class PickUpObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             transform.parent = null; //drop object
+
             hasBroom = false;
+            hasCloth = false;
+            //hasIngredient = false;
+        }
+    }
+
+    /*
+     * Used in the Puckup() method to determine which item player has picked up.
+     * Depending on the item, that is when the tasks will be activated.
+     */
+    public void DetermineItem(string tag, ref bool hasItem)
+    {
+        if (gameObject.CompareTag(tag))
+        {
+            hasItem = true;
         }
     }
 }

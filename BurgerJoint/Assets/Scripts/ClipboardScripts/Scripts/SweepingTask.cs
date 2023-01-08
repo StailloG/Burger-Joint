@@ -8,6 +8,8 @@ using UnityEngine;
  * Once the player sweeps the area by pressing spacebar, the glowing area will disappear.
  * 
  * Once all glowing areas disappear, the player has completed the sweeping task.
+ * 
+ * Place this script on the glowing areas gameOjbects.
  */
 
 public class SweepingTask : MonoBehaviour
@@ -18,9 +20,6 @@ public class SweepingTask : MonoBehaviour
     [Header("Activate Sweep Task")]
     PickUpObject hasItemScript;
     public GameObject glowArea;
-
-    [Header("Using in Other Scripts")]
-    public int sweepAmt = 0;
 
     void Start()
     {
@@ -60,9 +59,7 @@ public class SweepingTask : MonoBehaviour
     //deletes the area where player has swept
     private void Sweep()
     {
-        sweepAmt += 1;
-        //Destroy(glowArea);
-        GetComponent<MeshRenderer>().enabled = false;
+        Destroy(glowArea);
     }
 
     /* if player is holding the broom, the glowing areas will active.
