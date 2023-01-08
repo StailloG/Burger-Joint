@@ -14,17 +14,14 @@ public class WipingTask : MonoBehaviour
 {
     [Header("Activate Sweep Task")]
     PickUpObject hasItemScript;
-   // Outline outlineScript;
-
     public GameObject glowArea;
 
     void Start()
     {
         hasItemScript = FindObjectOfType<PickUpObject>();
-        //outlineScript = FindObjectOfType<Outline>();
 
-       // outlineScript.enabled = false;
-        GetComponent<Outline>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
+
     }
 
     void Update()
@@ -35,13 +32,11 @@ public class WipingTask : MonoBehaviour
     {
         if (hasItemScript.hasCloth == true)
         {
-            //outlineScript.enabled = true;
-            GetComponent<Outline>().enabled = true;
+            GetComponent<MeshRenderer>().enabled = true;
         }
         else
         {
-            //outlineScript.enabled = false;
-            GetComponent<Outline>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }
