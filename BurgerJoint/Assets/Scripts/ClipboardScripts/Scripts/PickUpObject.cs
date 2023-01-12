@@ -65,12 +65,8 @@ public class PickUpObject : MonoBehaviour
         {
             gameObject.transform.parent = player.transform; //ojbect is child of player
 
-            //if item is a broom
-            DetermineItem("Broom", ref hasBroom);
-            //if item is a cloth
-            DetermineItem("Cloth", ref hasCloth);
-            //if item is an ingredient
-            //DetermineItem("Ingredient", ref hasIngredient);
+            DetermineItem("Broom", ref hasBroom); //if item is a broom
+            DetermineItem("Cloth", ref hasCloth); //if item is a cloth
         }
     }
 
@@ -82,7 +78,6 @@ public class PickUpObject : MonoBehaviour
 
             hasBroom = false;
             hasCloth = false;
-            //hasIngredient = false;
         }
     }
 

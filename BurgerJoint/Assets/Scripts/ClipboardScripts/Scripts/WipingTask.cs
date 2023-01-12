@@ -12,31 +12,30 @@ using UnityEngine;
 
 public class WipingTask : MonoBehaviour
 {
-    [Header("Activate Sweep Task")]
+    [Header("Activate Wipe Task")]
     PickUpObject hasItemScript;
-    public GameObject glowArea;
+    public Outline outline;
 
     void Start()
     {
         hasItemScript = FindObjectOfType<PickUpObject>();
-
-        GetComponent<MeshRenderer>().enabled = false;
-
+        
+        outline.enabled = false;
     }
 
     void Update()
     {
-        ActivateGlow();
+        ActivateTable();
     }
-    public void ActivateGlow()
+    private void ActivateTable()
     {
         if (hasItemScript.hasCloth == true)
         {
-            GetComponent<MeshRenderer>().enabled = true;
+            outline.enabled = true;
         }
         else
         {
-            GetComponent<MeshRenderer>().enabled = false;
+            outline.enabled = false;
         }
     }
 }

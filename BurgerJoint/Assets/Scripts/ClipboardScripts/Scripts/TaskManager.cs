@@ -30,7 +30,7 @@ public class TaskManager : MonoBehaviour
      * if player is holding a task item,
      * player cannot open to-do list
      */
-    public void HasTaskItem()
+    private void HasTaskItem()
     {
         if (hasItemScript.hasBroom == true)
         {

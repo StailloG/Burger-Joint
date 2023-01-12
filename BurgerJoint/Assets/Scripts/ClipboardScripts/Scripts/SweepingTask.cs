@@ -65,7 +65,7 @@ public class SweepingTask : MonoBehaviour
     /* if player is holding the broom, the glowing areas will active.
      * if not, the glowing areas will disappear.
      */
-    public void ActivateGlow()
+    private void ActivateGlow()
     {
         if (hasItemScript.hasBroom == true)
         {
