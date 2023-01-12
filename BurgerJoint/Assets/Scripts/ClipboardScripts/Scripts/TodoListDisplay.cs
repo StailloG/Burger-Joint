@@ -6,7 +6,10 @@ using UnityEngine.UI;
 
 /*
  * Displays to-do list as a UI canvas when player is near clipboard & presses spacebar.
+ * After player grabs to-do list from clipboard, list can be opened from anywhere by pressing 'C'.
  * The to-do list will not go away until the player presses 'E'.
+ * 
+ * Attach script to clipboard gameobject.
  */
 
 public class TodoListDisplay : MonoBehaviour
@@ -14,9 +17,11 @@ public class TodoListDisplay : MonoBehaviour
     [Header("GameObjects")]
     public TextMeshProUGUI text;
     public Image displayList;
+    public GameObject listOnClipboard;
 
     [Header("Testing")]
     [SerializeField] private bool isPlayerNear = false;
+    [SerializeField] private bool firstTimeGrabbingList = false;
 
 
     void Start()
@@ -27,17 +32,19 @@ public class TodoListDisplay : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerNear == true)
+        if (isPlayerNear == true && firstTimeGrabbingList == false)
         {
             OpenListFromClipboard();
         }
+
+        OpenListFromAnywhere(); //after opening list from clipboard, player can open list from anywhere
 
         EscFromList();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && firstTimeGrabbingList == false)
         {
             isPlayerNear = true;
             text.gameObject.SetActive(true);
@@ -57,6 +64,9 @@ public class TodoListDisplay : MonoBehaviour
         {
             displayList.enabled = true;
             text.gameObject.SetActive(false);
+
+            firstTimeGrabbingList = true;
+            Destroy(listOnClipboard); //destroys original list on clipboard
         }
     }
 
@@ -66,6 +76,15 @@ public class TodoListDisplay : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             displayList.enabled = false;
+        }
+    }
+
+    //player can now open list from anywhere after grabbing it from the clipboard first
+    private void OpenListFromAnywhere()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            displayList.enabled = true;
         }
     }
 }
