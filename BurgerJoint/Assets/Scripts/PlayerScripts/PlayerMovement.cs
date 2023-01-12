@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         hInput = Input.GetAxis("Horizontal");
         vInput = Input.GetAxis("Vertical");
 
-        Vector3 velocity = transform.forward * (vInput * speed);
+        Vector3 velocity = transform.forward * (vInput * speed) + transform.right * hInput;
         if (charController.isGrounded)
             vSpeed = 0;
 
