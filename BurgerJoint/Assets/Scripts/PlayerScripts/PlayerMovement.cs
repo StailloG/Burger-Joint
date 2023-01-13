@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private float hInput;
     private float vInput;
     private CharacterController charController;
-
+    private const float Gravity = 9.81f;
+    private float vSpeed;
     void Awake()
     {
         charController = GetComponent<CharacterController>();
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
        HandleMovement();
+       
     }
 
     private void HandleMovement()
@@ -27,11 +29,16 @@ public class PlayerMovement : MonoBehaviour
         hInput = Input.GetAxis("Horizontal");
         vInput = Input.GetAxis("Vertical");
 
-        //move horizontal & vertical
-        Vector3 move = transform.right * hInput + transform.forward * vInput;
+        Vector3 velocity = transform.forward * (vInput * speed) + transform.right * hInput;
+        if (charController.isGrounded)
+            vSpeed = 0;
+
+        vSpeed -= Gravity * Time.deltaTime;
+        velocity.y = vSpeed; 
 
         //mouse movement
-        charController.Move(move * speed * Time.deltaTime);
+        charController.Move(velocity *  Time.deltaTime);
+        
     }
 
     //Script to help other systems know when the player is moveing
