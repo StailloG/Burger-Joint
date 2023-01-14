@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * Whenever player picks up the cloth, tables in the restaurant will start to glow.
+ * Whenever player picks up the cloth, tables in the restaurant will start to glow. - INCOMPLETE
  * The glowing areas indicate where the player will have to wipe clean.
  * Once the player cleans the area by pressing spacebar, the glow will disappear.
  * 
@@ -12,30 +12,48 @@ using UnityEngine;
 
 public class WipingTask : MonoBehaviour
 {
-    [Header("Activate Wipe Task")]
-    PickUpObject hasItemScript;
     public Outline outline;
+    PickUpObject hasItemScript;
+    [SerializeField] private bool isPlayerNear = false;
 
-    void Start()
+    private void Start()
     {
         hasItemScript = FindObjectOfType<PickUpObject>();
-        
-        outline.enabled = false;
     }
 
     void Update()
     {
-        ActivateTable();
+        if (isPlayerNear == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            CleanTable();
+        }
+
+        //ActivateTableGlow(); doesn't seem to work
     }
-    private void ActivateTable()
+    private void OnTriggerStay(Collider other)
     {
-        if (hasItemScript.hasCloth == true)
+        if (other.CompareTag("Player"))
         {
-            outline.enabled = true;
-        }
-        else
-        {
-            outline.enabled = false;
+            isPlayerNear = true;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isPlayerNear = false;
+    }
+
+    private void CleanTable()
+    {
+        outline.enabled = false;
+    }
+
+    //doesn't seem to work
+    //public void ActivateTableGlow()
+    //{
+    //    if (hasItemScript.hasCloth == true)
+    //    {
+    //        outline.enabled = false;
+    //    }
+    //}
 }

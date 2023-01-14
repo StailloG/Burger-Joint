@@ -1422,9 +1422,6 @@ GameObject:
   - component: {fileID: 4832497718153789308}
   - component: {fileID: 4394409740461596042}
   - component: {fileID: 1571120331304902180}
-  - component: {fileID: 4475483597780933046}
-  - component: {fileID: 4475483597780933045}
-  - component: {fileID: 4475483597780933044}
   m_Layer: 0
   m_Name: Top bun
   m_TagString: Untagged
@@ -1528,51 +1525,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4475483597780933046
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4475483597780933043}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &4475483597780933045
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4475483597780933043}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.7232739, y: 0.7504097, z: 1.7369581}
-  m_Center: {x: 0.0027039559, y: 0.57405, z: -0.014112203}
---- !u!114 &4475483597780933044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4475483597780933043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80092a2978da2e5489f2f88818966893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canPickUp: 0
-  spacePressedAllowed: 0
-  playerHand: {fileID: 0}
-  ingredient: {fileID: 4475483597780933043}
 --- !u!1 &4549574021090792651
 GameObject:
   m_ObjectHideFlags: 0

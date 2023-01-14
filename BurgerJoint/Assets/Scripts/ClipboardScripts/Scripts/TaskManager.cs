@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 /*
  * If player has the list open, cannot interact with items.
+ * 
  * List will update as each task is complete.
  * 
- * NOT COMPLETE
  */
 
 public class TaskManager : MonoBehaviour
@@ -44,6 +44,10 @@ public class TaskManager : MonoBehaviour
         }
     }
 
+    /*
+     * if all areas of the florr is cleaned,
+     * change sprite so that the checkmark is next to the sweep task.
+     */
     private void FinishedSweeping()
     {
         if (GameObject.FindGameObjectsWithTag("DirtyFloor").Length == 0)
