@@ -82,7 +82,7 @@ public class PickUpObject : MonoBehaviour
     }
 
     /*
-     * Used in the Puckup() method to determine which item player has picked up.
+     * Used in the Pickup() method to determine which item player has picked up.
      * Depending on the item, that is when the tasks will be activated.
      */
     public void DetermineItem(string tag, ref bool hasItem)

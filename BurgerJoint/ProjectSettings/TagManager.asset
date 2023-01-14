@@ -8,6 +8,7 @@ TagManager:
   - BurgerIngredient
   - Broom
   - Cloth
+  - DirtyFloor
   layers:
   - Default
   - TransparentFX

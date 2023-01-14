@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
  * If player has the list open, cannot interact with items.
@@ -15,6 +16,10 @@ public class TaskManager : MonoBehaviour
     TodoListDisplay listDisplayScript;
     PickUpObject hasItemScript;
 
+    [Header("List Images")]
+    //public Image listImage; //ui
+    public Sprite sweepComplete; //change image due to task completion
+
     void Start()
     {
         listDisplayScript = FindObjectOfType<TodoListDisplay>();
@@ -24,6 +29,7 @@ public class TaskManager : MonoBehaviour
     void Update()
     {
         HasTaskItem();
+        FinishedSweeping();
     }
 
     /*
@@ -34,7 +40,15 @@ public class TaskManager : MonoBehaviour
     {
         if (hasItemScript.hasBroom == true)
         {
-            listDisplayScript.displayList.enabled =false;
+            listDisplayScript.displayList.enabled = false;
+        }
+    }
+
+    private void FinishedSweeping()
+    {
+        if (GameObject.FindGameObjectsWithTag("DirtyFloor").Length == 0)
+        {
+            listDisplayScript.displayList.sprite = sweepComplete;
         }
     }
 }

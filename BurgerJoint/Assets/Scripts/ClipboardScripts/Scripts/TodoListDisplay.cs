@@ -10,6 +10,8 @@ using UnityEngine.UI;
  * The to-do list will not go away until the player presses 'E'.
  * 
  * Attach script to clipboard gameobject.
+ * 
+ * The script TaskManager uses this script.
  */
 
 public class TodoListDisplay : MonoBehaviour
@@ -57,7 +59,10 @@ public class TodoListDisplay : MonoBehaviour
         text.gameObject.SetActive(false);
     }
 
-    //if player is opening list from clipboard
+    /*
+     * if player is opening list from clipboard for the first time
+     * delete the list on the clipboard.
+     */
     private void OpenListFromClipboard()
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
@@ -70,7 +75,7 @@ public class TodoListDisplay : MonoBehaviour
         }
     }
 
-    //list will disappear when player presses e
+    //to close the list, player presses e 
     private void EscFromList()
     {
         if (Input.GetKeyDown(KeyCode.E))
