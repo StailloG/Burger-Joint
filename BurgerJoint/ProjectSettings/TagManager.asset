@@ -9,6 +9,8 @@ TagManager:
   - Broom
   - Cloth
   - DirtyFloor
+  - Ingredient
+  - Tomato
   layers:
   - Default
   - TransparentFX
