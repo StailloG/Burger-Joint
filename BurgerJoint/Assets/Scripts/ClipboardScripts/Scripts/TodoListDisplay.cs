@@ -23,7 +23,7 @@ public class TodoListDisplay : MonoBehaviour
 
     [Header("Testing")]
     [SerializeField] private bool isPlayerNear = false;
-    [SerializeField] private bool firstTimeGrabbingList = false;
+    [SerializeField] private bool grabbedList = false;
 
 
     void Start()
@@ -34,19 +34,22 @@ public class TodoListDisplay : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerNear == true && firstTimeGrabbingList == false)
+        if (isPlayerNear == true && grabbedList == false)
         {
             OpenListFromClipboard();
         }
 
-        OpenListFromAnywhere(); //after opening list from clipboard, player can open list from anywhere
+        if (grabbedList == true)
+        {
+            OpenListFromAnywhere(); //after opening list from clipboard, player can open list from anywhere
+        }
 
         EscFromList();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && firstTimeGrabbingList == false)
+        if (other.tag == "Player" && grabbedList == false)
         {
             isPlayerNear = true;
             text.gameObject.SetActive(true);
@@ -70,7 +73,7 @@ public class TodoListDisplay : MonoBehaviour
             displayList.enabled = true;
             text.gameObject.SetActive(false);
 
-            firstTimeGrabbingList = true;
+            grabbedList = true;
             Destroy(listOnClipboard); //destroys original list on clipboard
         }
     }
