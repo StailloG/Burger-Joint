@@ -21,6 +21,8 @@ public class PlayerFootsteps : MonoBehaviour
     private PlayerMovement pm;
 
     private float timer = 0;
+
+    private AudioClip lastClipPlayed;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -41,7 +43,11 @@ public class PlayerFootsteps : MonoBehaviour
     private void PlayFootstepAudio()
     {
         var clip = DetermineFootstepClip();
-       
+        if (clip == lastClipPlayed)
+        {
+            clip = DetermineFootstepClip();
+        }
+        lastClipPlayed = clip;
         
         audioSource.volume = Random.Range(minVolume, maxVolume);
         audioSource.pitch = Random.Range(0.9f, 1.1f);
@@ -54,19 +60,21 @@ public class PlayerFootsteps : MonoBehaviour
         {
             case FootstepType.TILE:
                 return tileFootsteps[Random.Range(0, tileFootsteps.Count)];
-                break;
             case FootstepType.GRASS:
                 return grassFootsteps[Random.Range(0, grassFootsteps.Count)];
-                break;
             case FootstepType.CARPET:
                 return carpetFootsteps[Random.Range(0, carpetFootsteps.Count)];
-                break;
             default:
                 Debug.Log("Default footstep being called");
                 return tileFootsteps[Random.Range(0, tileFootsteps.Count)];
-                break;
+                
             
         }
+    }
+
+    public void SetFootstepType(FootstepType newFootstepType)
+    {
+        currentFootstepType = newFootstepType;
     }
 }
 

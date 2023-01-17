@@ -2013,11 +2013,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9040234486394500222, guid: 827062553953ace449df65073bc88caa, type: 3}
   m_PrefabInstance: {fileID: 552058947}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &265588656 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5066528681751493067, guid: a504885a570e6064f91a363a523a01b1, type: 3}
-  m_PrefabInstance: {fileID: 1911365074}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &272643564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,6 +2144,66 @@ Transform:
   m_Father: {fileID: 210292221}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &284635835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 284635836}
+  - component: {fileID: 284635838}
+  - component: {fileID: 284635837}
+  m_Layer: 0
+  m_Name: Carpet Footstep Mapping
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &284635836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284635835}
+  m_LocalRotation: {x: 0, y: -0.3580421, z: 0, w: 0.9337055}
+  m_LocalPosition: {x: 16, y: -1.04, z: -100.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1869357853}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: -41.96, z: 0}
+--- !u!114 &284635837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284635835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f31eb025c6b2146aa04a4d3ac4aa4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entryFootstepType: 1
+  exitFootstepType: 2
+--- !u!65 &284635838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284635835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8585787, y: 1, z: 6.3188076}
+  m_Center: {x: 3.4561496, y: 0, z: -0.52034897}
 --- !u!1001 &295905605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4343,21 +4398,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0362909, y: 0.5486434, z: 1.1600413}
   m_Center: {x: 0.13821608, y: 0.53170466, z: -0.6218906}
---- !u!114 &620410461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236909708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7f92c498eaf7aa43b69dffc9b8a3e2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 265588656}
-  player: {fileID: 0}
-  isPlayerNear: 0
 --- !u!4 &627724366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1064307757825314780, guid: ee96ae14708602d469d22f53342f354e, type: 3}
@@ -5340,6 +5380,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d6cdd9ce4a02cd64490f35ef76b72107, type: 3}
   - {fileID: 8300000, guid: 4798d7a1f8e6ab948b469eb55abf0a11, type: 3}
   - {fileID: 8300000, guid: f89814f4f7dbe614fa66df801253666c, type: 3}
+  carpetFootsteps:
+  - {fileID: 8300000, guid: c720b6389d911e143be3297c72b57a26, type: 3}
+  - {fileID: 8300000, guid: 65d2bf20677334d469d644dce9eb6725, type: 3}
+  - {fileID: 8300000, guid: 7452183d6ae6f654abce33239f91084e, type: 3}
+  - {fileID: 8300000, guid: b6bfcf48d9dff394ba2c9e796f57c8ae, type: 3}
+  grassFootsteps:
+  - {fileID: 8300000, guid: 6d8596ba384f3d34ab758034b519ab35, type: 3}
+  - {fileID: 8300000, guid: 1b61fa69bf1a1e345a5a144596b0becc, type: 3}
+  - {fileID: 8300000, guid: eb8f452052de63744a8f5770c146fb89, type: 3}
+  - {fileID: 8300000, guid: 0393bc2c895207849b474f41b793235b, type: 3}
+  currentFootstepType: 2
   minVolume: 0.8
   maxVolume: 1
   stepCooldown: 0.49
@@ -6608,6 +6659,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91d190bdabdf4a4b946a0809f9ae20d, type: 3}
+--- !u!1 &981027818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 981027819}
+  - component: {fileID: 981027821}
+  - component: {fileID: 981027820}
+  m_Layer: 0
+  m_Name: Restaurant Footstep Mapping
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &981027819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981027818}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.8, y: -1.04, z: -56.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1869357853}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &981027820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981027818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f31eb025c6b2146aa04a4d3ac4aa4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entryFootstepType: 2
+  exitFootstepType: 3
+--- !u!65 &981027821
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981027818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 28.74572, y: 1, z: 54.044605}
+  m_Center: {x: 3.2283173, y: 0, z: -22.540789}
 --- !u!1001 &984683872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11987,6 +12098,10 @@ Transform:
   m_Children:
   - {fileID: 934175679}
   - {fileID: 768413121}
+  - {fileID: 1915607579}
+  - {fileID: 1976288711}
+  - {fileID: 981027819}
+  - {fileID: 284635836}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12422,6 +12537,66 @@ PrefabInstance:
     - {fileID: 0}
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a504885a570e6064f91a363a523a01b1, type: 3}
+--- !u!1 &1915607578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915607579}
+  - component: {fileID: 1915607581}
+  - component: {fileID: 1915607580}
+  m_Layer: 0
+  m_Name: Parking Lot 1 FootstepMapping
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1915607579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915607578}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.34, y: -1.04, z: -40.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1869357853}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915607580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915607578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f31eb025c6b2146aa04a4d3ac4aa4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entryFootstepType: 2
+  exitFootstepType: 3
+--- !u!65 &1915607581
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915607578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.923834, y: 1, z: 11.913354}
+  m_Center: {x: -0.06528187, y: 0, z: -0.69668245}
 --- !u!1001 &1918023773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12724,6 +12899,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91d190bdabdf4a4b946a0809f9ae20d, type: 3}
+--- !u!1 &1976288710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1976288711}
+  - component: {fileID: 1976288713}
+  - component: {fileID: 1976288712}
+  m_Layer: 0
+  m_Name: 'Parking Lot 2 FootstepMapping '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1976288711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976288710}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.8, y: -1.04, z: -5.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1869357853}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1976288712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976288710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f31eb025c6b2146aa04a4d3ac4aa4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entryFootstepType: 2
+  exitFootstepType: 3
+--- !u!65 &1976288713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976288710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.923834, y: 1, z: 11.913354}
+  m_Center: {x: -0.06528187, y: 0, z: -0.69668245}
 --- !u!1 &1976976714
 GameObject:
   m_ObjectHideFlags: 0
