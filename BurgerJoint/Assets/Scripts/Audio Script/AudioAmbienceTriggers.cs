@@ -16,10 +16,8 @@ public class AudioAmbienceTriggers : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("triggered!");
         if (other.GetComponent<PlayerMovement>())
         {
-            Debug.Log("and caught player");
 
             audioAmbienceManager.EnterTrigger();
         }
