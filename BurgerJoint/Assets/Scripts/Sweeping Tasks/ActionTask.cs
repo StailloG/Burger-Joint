@@ -33,8 +33,8 @@ public class ActionTask : MonoBehaviour
         }
     }
 
-    public void RemoveSelf(CheckAction checkAction)
+    public void RemoveSelf(CheckActionAreas checkActionAreas)
     {
-        actionAreas.Remove(checkAction.gameObject);
+        actionAreas.Remove(checkActionAreas.gameObject);
     }
 }

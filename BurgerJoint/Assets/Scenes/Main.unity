@@ -4381,18 +4381,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0362909, y: 0.5486434, z: 1.1600413}
   m_Center: {x: 0.13821608, y: 0.53170466, z: -0.6218906}
---- !u!114 &620410461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236909708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7f92c498eaf7aa43b69dffc9b8a3e2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &627724366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1064307757825314780, guid: ee96ae14708602d469d22f53342f354e, type: 3}
@@ -7174,7 +7162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1058949dcb957f14490fdcdf82f40609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupType: 0
+  pickupType: 2
   isPlayerNear: 0
   actionTask: {fileID: 0}
 --- !u!1001 &1051986689
@@ -12225,6 +12213,7 @@ GameObject:
   - component: {fileID: 1880173467}
   - component: {fileID: 1880173466}
   - component: {fileID: 1880173468}
+  - component: {fileID: 1880173469}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -12364,6 +12353,19 @@ MonoBehaviour:
   PickupRange: 6
   InteractKey: 101
   MoveObjSpeed: 25
+--- !u!114 &1880173469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880173461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21eda31d17ab9b47908ff10786b33a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHandState: 0
 --- !u!65 &1882128772
 BoxCollider:
   m_ObjectHideFlags: 0

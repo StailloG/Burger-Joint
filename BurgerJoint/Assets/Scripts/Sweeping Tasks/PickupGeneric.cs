@@ -20,13 +20,7 @@ public class PickupGeneric : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -46,6 +40,9 @@ public class PickupGeneric : MonoBehaviour
             //show all outlines, only for this type 
             actionTask.ShowAllOutlines();
             
+            var i =player.GetComponent<HandState>();
+            i.CurrentHandState = pickupType;
+            
         }
     }
 
@@ -56,6 +53,9 @@ public class PickupGeneric : MonoBehaviour
             transform.parent = null; //drop object
             //hide all outlines
             actionTask.HideAllOutLines();
+            
+            var i =player.GetComponent<HandState>();
+            i.CurrentHandState = PickupType.NONE;
         }
     }
 
@@ -74,11 +74,4 @@ public class PickupGeneric : MonoBehaviour
             isPlayerNear = false;
         }
     }
-}
-
-public enum PickupType
-{
-    NONE,
-    BROOM, 
-    CLOTH
 }

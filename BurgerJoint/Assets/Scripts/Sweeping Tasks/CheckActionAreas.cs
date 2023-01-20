@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// The areas to sweep. checks if the broom or cloth is inside it to remove itself from ActionTask
 /// </summary>
-public class CheckAction : MonoBehaviour
+public class CheckActionAreas : MonoBehaviour
 {
     [SerializeField] private PickupType areaPickupType;
 
@@ -40,14 +40,18 @@ public class CheckAction : MonoBehaviour
     {
         GetComponent<OutlineManager>().HideOutline();
         actionTask.RemoveSelf(this);
-        Debug.Log("trying to clean");
     }
     private void OnTriggerEnter(Collider other)
     {
 
         if (other.GetComponent<PlayerMovement>())
         {
-            isItemNear = true;
+
+            if (other.GetComponent<HandState>().CurrentHandState == areaPickupType)
+            {
+                isItemNear = true;
+
+            }
         }
        
 
