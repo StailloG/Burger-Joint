@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Dialogue : MonoBehaviour
+public class DialogueOld : MonoBehaviour
 {
    [SerializeField] private TextMeshProUGUI textComponent;
    public string[] lines; //convert this into a scriptable object
