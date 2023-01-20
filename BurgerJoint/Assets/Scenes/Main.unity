@@ -349,13 +349,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 31597220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89853614f857a1429c6e13b1e36daad, type: 3}
+  m_Script: {fileID: 11500000, guid: 1058949dcb957f14490fdcdf82f40609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskItem: {fileID: 31597220}
+  pickupType: 1
   isPlayerNear: 0
-  hasBroom: 0
-  hasCloth: 0
+  actionTask: {fileID: 210292222}
 --- !u!1 &48654283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 210292221}
+  - component: {fileID: 210292222}
   m_Layer: 0
   m_Name: SweepingTask
   m_TagString: Untagged
@@ -1584,6 +1584,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &210292222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210292220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045f6786e63567240a62699e4f3803a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionAreas:
+  - {fileID: 1618686704}
+  - {fileID: 430739183}
+  - {fileID: 1299807861}
+  - {fileID: 272643564}
 --- !u!1001 &210484570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2013,11 +2030,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9040234486394500222, guid: 827062553953ace449df65073bc88caa, type: 3}
   m_PrefabInstance: {fileID: 552058947}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &265588656 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5066528681751493067, guid: a504885a570e6064f91a363a523a01b1, type: 3}
-  m_PrefabInstance: {fileID: 1911365074}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &272643564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,7 +2043,8 @@ GameObject:
   - component: {fileID: 272643568}
   - component: {fileID: 272643567}
   - component: {fileID: 272643566}
-  - component: {fileID: 272643565}
+  - component: {fileID: 272643571}
+  - component: {fileID: 272643572}
   m_Layer: 0
   m_Name: Broom trigger (3)
   m_TagString: DirtyFloor
@@ -2039,20 +2052,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &272643565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272643564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b545f422176c80a48ac9b1a9826db5d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerNear: 0
-  glowArea: {fileID: 272643564}
 --- !u!114 &272643566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2149,6 +2148,32 @@ Transform:
   m_Father: {fileID: 210292221}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &272643571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272643564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b51e63b94c432c4c9acaa882634bad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &272643572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272643564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b77e52174af7d4dad3f264297ad331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaPickupType: 1
+  isItemNear: 0
 --- !u!1001 &295905605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2967,7 +2992,8 @@ GameObject:
   - component: {fileID: 430739187}
   - component: {fileID: 430739186}
   - component: {fileID: 430739185}
-  - component: {fileID: 430739184}
+  - component: {fileID: 430739190}
+  - component: {fileID: 430739191}
   m_Layer: 0
   m_Name: Broom trigger (1)
   m_TagString: DirtyFloor
@@ -2975,20 +3001,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &430739184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430739183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b545f422176c80a48ac9b1a9826db5d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerNear: 0
-  glowArea: {fileID: 430739183}
 --- !u!114 &430739185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3085,6 +3097,32 @@ Transform:
   m_Father: {fileID: 210292221}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &430739190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430739183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b51e63b94c432c4c9acaa882634bad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &430739191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430739183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b77e52174af7d4dad3f264297ad331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaPickupType: 1
+  isItemNear: 0
 --- !u!1 &435916309
 GameObject:
   m_ObjectHideFlags: 0
@@ -4355,9 +4393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f92c498eaf7aa43b69dffc9b8a3e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 265588656}
-  player: {fileID: 0}
-  isPlayerNear: 0
 --- !u!4 &627724366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1064307757825314780, guid: ee96ae14708602d469d22f53342f354e, type: 3}
@@ -7127,7 +7162,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f79bf1a7ef449fe4095b1d6e624b15b6, type: 3}
   m_PrefabInstance: {fileID: 1028907138}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1028907143
+--- !u!114 &1028907146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7136,13 +7171,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1028907139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89853614f857a1429c6e13b1e36daad, type: 3}
+  m_Script: {fileID: 11500000, guid: 1058949dcb957f14490fdcdf82f40609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskItem: {fileID: 1028907139}
+  pickupType: 0
   isPlayerNear: 0
-  hasBroom: 0
-  hasCloth: 0
+  actionTask: {fileID: 0}
 --- !u!1001 &1051986689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8488,7 +8522,8 @@ GameObject:
   - component: {fileID: 1299807865}
   - component: {fileID: 1299807864}
   - component: {fileID: 1299807863}
-  - component: {fileID: 1299807862}
+  - component: {fileID: 1299807868}
+  - component: {fileID: 1299807869}
   m_Layer: 0
   m_Name: Broom trigger (2)
   m_TagString: DirtyFloor
@@ -8496,20 +8531,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1299807862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299807861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b545f422176c80a48ac9b1a9826db5d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerNear: 0
-  glowArea: {fileID: 1299807861}
 --- !u!114 &1299807863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8606,6 +8627,32 @@ Transform:
   m_Father: {fileID: 210292221}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1299807868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299807861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b51e63b94c432c4c9acaa882634bad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1299807869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299807861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b77e52174af7d4dad3f264297ad331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaPickupType: 1
+  isItemNear: 0
 --- !u!1 &1333451731
 GameObject:
   m_ObjectHideFlags: 0
@@ -10364,7 +10411,8 @@ GameObject:
   - component: {fileID: 1618686706}
   - component: {fileID: 1618686705}
   - component: {fileID: 1618686709}
-  - component: {fileID: 1618686710}
+  - component: {fileID: 1618686711}
+  - component: {fileID: 1618686712}
   m_Layer: 0
   m_Name: Broom trigger
   m_TagString: DirtyFloor
@@ -10468,7 +10516,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &1618686710
+--- !u!114 &1618686711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10477,11 +10525,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1618686704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b545f422176c80a48ac9b1a9826db5d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b51e63b94c432c4c9acaa882634bad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerNear: 0
-  glowArea: {fileID: 1618686704}
+--- !u!114 &1618686712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618686704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b77e52174af7d4dad3f264297ad331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areaPickupType: 1
+  isItemNear: 0
 --- !u!65 &1621474208
 BoxCollider:
   m_ObjectHideFlags: 0
