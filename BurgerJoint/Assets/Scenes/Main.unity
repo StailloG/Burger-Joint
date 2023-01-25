@@ -6567,6 +6567,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   distance: 10
+  hand: {fileID: 1976976714}
   raycastDot: {fileID: 1189604302}
 --- !u!1001 &963763001
 PrefabInstance:

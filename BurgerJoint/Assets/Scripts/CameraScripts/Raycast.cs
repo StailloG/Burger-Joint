@@ -22,11 +22,12 @@ public class Raycast : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] private float distance = 10f;
     private GameObject player;
+    public GameObject hand;
     public TextMeshProUGUI raycastDot;
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -87,7 +88,7 @@ public class Raycast : MonoBehaviour
     {
         GameObject itemGrabbed = ray.collider.gameObject;
 
-        var prefab = Instantiate(itemGrabbed, player.transform.position, player.transform.rotation);
+        var prefab = Instantiate(itemGrabbed, hand.transform.position, player.transform.rotation);
         prefab.transform.parent = player.transform; //ojbect is child of player
     }
 }
