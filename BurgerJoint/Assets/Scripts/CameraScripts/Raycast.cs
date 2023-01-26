@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 /*
  * This script is used for when the player is getting the ingredients from the office
@@ -20,10 +22,12 @@ public class Raycast : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] private float distance = 10f;
     private GameObject player;
+    public GameObject hand;
+    public TextMeshProUGUI raycastDot;
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -41,8 +45,9 @@ public class Raycast : MonoBehaviour
     {
         if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out RaycastHit hitinfo, distance, layerMask))
         {
-            //Debug.Log("Hit something");
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitinfo.distance, Color.green); //shows the raycast line
+            raycastDot.color = Color.red;
+
+            // Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitinfo.distance, Color.green); //shows the raycast line
 
             //identifies ingredient
             IdentifyIngredient(hitinfo, "Tomato");
@@ -50,8 +55,8 @@ public class Raycast : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Nothing has been hit");
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distance,  Color.red);
+            raycastDot.color = Color.white;
+            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distance,  Color.red);
         }
     }
 
@@ -83,7 +88,7 @@ public class Raycast : MonoBehaviour
     {
         GameObject itemGrabbed = ray.collider.gameObject;
 
-        var prefab = Instantiate(itemGrabbed, player.transform.position, player.transform.rotation);
+        var prefab = Instantiate(itemGrabbed, hand.transform.position, player.transform.rotation);
         prefab.transform.parent = player.transform; //ojbect is child of player
     }
 }
