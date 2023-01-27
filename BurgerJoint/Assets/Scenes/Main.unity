@@ -362,9 +362,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1544746014}
     m_Modifications:
+    - target: {fileID: 1259576168500841390, guid: 91d35e3ab254a324691ac51ecfe6b758, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1259576169169802629, guid: 91d35e3ab254a324691ac51ecfe6b758, type: 3}
       propertyPath: m_Name
       value: TextboxBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259576169169802629, guid: 91d35e3ab254a324691ac51ecfe6b758, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1259576169169802632, guid: 91d35e3ab254a324691ac51ecfe6b758, type: 3}
       propertyPath: m_Color.a
@@ -5599,6 +5607,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d6cdd9ce4a02cd64490f35ef76b72107, type: 3}
   - {fileID: 8300000, guid: 4798d7a1f8e6ab948b469eb55abf0a11, type: 3}
   - {fileID: 8300000, guid: f89814f4f7dbe614fa66df801253666c, type: 3}
+  carpetFootsteps: []
+  grassFootsteps: []
+  currentFootstepType: 0
   minVolume: 0.8
   maxVolume: 1
   stepCooldown: 0.49
@@ -13826,6 +13837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1752951401}
   isPlayerNear: 0
+  carInteractionDialogue: {fileID: 11400000, guid: 28a8118a435d7e44c908719d3cf168fb, type: 2}
 --- !u!4 &2063253874 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4870167790249810, guid: ab26596a331d7ee43a3e9d29e2be9f84, type: 3}
