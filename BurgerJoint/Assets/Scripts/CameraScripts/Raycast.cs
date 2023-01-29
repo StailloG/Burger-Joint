@@ -21,6 +21,7 @@ public class Raycast : MonoBehaviour
 {
     [SerializeField] LayerMask layerMask;
     [SerializeField] private float distance = 10f;
+    [SerializeField] private bool holdingItem = false;
     private GameObject player;
     public GameObject hand;
     public TextMeshProUGUI raycastDot;
@@ -90,5 +91,12 @@ public class Raycast : MonoBehaviour
 
         var prefab = Instantiate(itemGrabbed, hand.transform.position, player.transform.rotation);
         prefab.transform.parent = player.transform; //ojbect is child of player
+        holdingItem = true;
+    }
+
+    private void Drop()
+    {
+        
+        holdingItem = false;
     }
 }

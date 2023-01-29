@@ -10,12 +10,13 @@ using UnityEngine.Events;
 public class PickupGeneric : MonoBehaviour
 {
     private GameObject player;
+    public PickupType pickupType;
 
-     public PickupType pickupType;
     [Header("Shown in inspector for debugging")]
     [SerializeField] private bool isPlayerNear = false;
 
-    [SerializeField] private ActionTask actionTask;
+    //[SerializeField] private ActionTask actionTask;
+
     private void Awake()
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
@@ -38,7 +39,7 @@ public class PickupGeneric : MonoBehaviour
         {
             gameObject.transform.parent = player.transform; //ojbect is child of player
             //show all outlines, only for this type 
-            actionTask.ShowAllOutlines();
+            //actionTask.ShowAllOutlines(); <- commented out because the stains will already be showing
             
             var i =player.GetComponent<HandState>();
             i.CurrentHandState = pickupType;
@@ -52,7 +53,7 @@ public class PickupGeneric : MonoBehaviour
         {
             transform.parent = null; //drop object
             //hide all outlines
-            actionTask.HideAllOutLines();
+            //actionTask.HideAllOutLines(); <- commented out because the stains will already be showing
             
             var i =player.GetComponent<HandState>();
             i.CurrentHandState = PickupType.NONE;

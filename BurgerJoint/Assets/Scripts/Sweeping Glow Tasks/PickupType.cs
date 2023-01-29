@@ -1,6 +1,6 @@
 ﻿public enum PickupType
 {
     NONE,
-    BROOM, 
+    BROOM,
     CLOTH
 }

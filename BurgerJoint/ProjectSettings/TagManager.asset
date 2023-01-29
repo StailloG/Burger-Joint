@@ -11,6 +11,7 @@ TagManager:
   - DirtyFloor
   - Ingredient
   - Tomato
+  - Stain
   layers:
   - Default
   - TransparentFX
