@@ -38,11 +38,12 @@ public class TaskManager : MonoBehaviour
      */
     private void HasTaskItem()
     {
-        return;
+        /*
         if (hasItemScript.hasBroom == true)
         {
             listDisplayScript.displayList.enabled = false;
         }
+        */
     }
 
     /*

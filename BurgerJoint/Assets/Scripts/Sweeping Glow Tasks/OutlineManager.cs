@@ -8,7 +8,7 @@ using UnityEngine;
 public class OutlineManager : MonoBehaviour
 {
     private Outline outlineScript;
-
+    [SerializeField] private GameObject stainVisual;
 
     private void Awake()
     {
@@ -19,11 +19,16 @@ public class OutlineManager : MonoBehaviour
 
     public void ShowOutline()
     {
-        outlineScript.enabled = true;
+       // outlineScript.enabled = true;
+        if(stainVisual)
+            stainVisual.gameObject.SetActive(true);
     }
     
     public void HideOutline()
     {
-        outlineScript.enabled = false;
+       // outlineScript.enabled = false;
+        if(stainVisual)
+            stainVisual.gameObject.SetActive(false);
+
     }
 }

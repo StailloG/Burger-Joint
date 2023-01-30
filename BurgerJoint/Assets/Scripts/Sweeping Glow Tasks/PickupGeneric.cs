@@ -15,7 +15,7 @@ public class PickupGeneric : MonoBehaviour
     [Header("Shown in inspector for debugging")]
     [SerializeField] private bool isPlayerNear = false;
 
-    //[SerializeField] private ActionTask actionTask;
+    [SerializeField] private ActionTask actionTask;
 
     private void Awake()
     {
@@ -39,8 +39,7 @@ public class PickupGeneric : MonoBehaviour
         {
             gameObject.transform.parent = player.transform; //ojbect is child of player
             //show all outlines, only for this type 
-            //actionTask.ShowAllOutlines(); <- commented out because the stains will already be showing
-            
+            actionTask.ShowAllOutlines();
             var i =player.GetComponent<HandState>();
             i.CurrentHandState = pickupType;
             
@@ -53,7 +52,7 @@ public class PickupGeneric : MonoBehaviour
         {
             transform.parent = null; //drop object
             //hide all outlines
-            //actionTask.HideAllOutLines(); <- commented out because the stains will already be showing
+           actionTask.HideAllOutLines(); 
             
             var i =player.GetComponent<HandState>();
             i.CurrentHandState = PickupType.NONE;

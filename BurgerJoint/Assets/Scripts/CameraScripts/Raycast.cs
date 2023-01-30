@@ -36,7 +36,7 @@ public class Raycast : MonoBehaviour
     {
         RaycastHit();
 
-        Drop();
+       // Drop();
     }
 
     /*
@@ -94,7 +94,7 @@ public class Raycast : MonoBehaviour
 
         var prefab = Instantiate(itemGrabbed, hand.transform.position, player.transform.rotation);
         prefab.transform.parent = player.transform; //ojbect is child of player
-        holdingItem = true;
+       // holdingItem = true;
     }
 
     private void Drop()
@@ -102,7 +102,7 @@ public class Raycast : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             transform.parent = null;
-            holdingItem = false;
+         //   holdingItem = false;
         }
     }
 }
