@@ -26,6 +26,7 @@ public class Raycast : MonoBehaviour
     public GameObject hand;
     public TextMeshProUGUI raycastDot;
 
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -34,6 +35,8 @@ public class Raycast : MonoBehaviour
     void Update()
     {
         RaycastHit();
+
+        Drop();
     }
 
     /*
@@ -96,7 +99,10 @@ public class Raycast : MonoBehaviour
 
     private void Drop()
     {
-        
-        holdingItem = false;
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            transform.parent = null;
+            holdingItem = false;
+        }
     }
 }
