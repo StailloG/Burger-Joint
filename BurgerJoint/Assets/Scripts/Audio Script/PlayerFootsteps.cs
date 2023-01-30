@@ -8,7 +8,10 @@ public class PlayerFootsteps : MonoBehaviour
 {
     private AudioSource audioSource;
     public List<AudioClip> tileFootsteps;
-
+    public List<AudioClip> carpetFootsteps;
+    public List<AudioClip> grassFootsteps;
+    [SerializeField] private FootstepType currentFootstepType;
+    
     [Header("Random Params")] 
     [SerializeField] [Range(0.01f, 0.99f)] private float minVolume = 0.8f;
     [SerializeField] [Range(0.02f, 1f)] private float maxVolume = 1f;
@@ -18,6 +21,8 @@ public class PlayerFootsteps : MonoBehaviour
     private PlayerMovement pm;
 
     private float timer = 0;
+
+    private AudioClip lastClipPlayed;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,11 +40,49 @@ public class PlayerFootsteps : MonoBehaviour
         timer = 0;
     }
 
-    public void PlayFootstepAudio()
+    private void PlayFootstepAudio()
     {
-        var clip = tileFootsteps[Random.Range(0, tileFootsteps.Count)];
+        var clip = DetermineFootstepClip();
+        if (clip == lastClipPlayed)
+        {
+            clip = DetermineFootstepClip();
+        }
+        lastClipPlayed = clip;
+        
         audioSource.volume = Random.Range(minVolume, maxVolume);
         audioSource.pitch = Random.Range(0.9f, 1.1f);
         audioSource.PlayOneShot(clip);
     }
+
+    private AudioClip DetermineFootstepClip()
+    {
+        switch (currentFootstepType)
+        {
+            case FootstepType.TILE:
+                return tileFootsteps[Random.Range(0, tileFootsteps.Count)];
+            case FootstepType.GRASS:
+                return grassFootsteps[Random.Range(0, grassFootsteps.Count)];
+            case FootstepType.CARPET:
+                return carpetFootsteps[Random.Range(0, carpetFootsteps.Count)];
+            default:
+                Debug.Log("Default footstep being called");
+                return tileFootsteps[Random.Range(0, tileFootsteps.Count)];
+                
+            
+        }
+    }
+
+    public void SetFootstepType(FootstepType newFootstepType)
+    {
+        currentFootstepType = newFootstepType;
+    }
+}
+
+
+public enum FootstepType
+{
+    NONE,
+    CARPET,
+    TILE,
+    GRASS
 }
