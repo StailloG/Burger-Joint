@@ -6,16 +6,13 @@ using UnityEngine;
 public class ActionTask : MonoBehaviour
 {
     
-    //all action areas must have outline nad outline manager scripts
+    //all action areas must have outline and outline manager scripts
     public List<GameObject> actionAreas;
 
     private void Start()
     {
-        
         HideAllOutLines();
-     
     }
-
 
     public void ShowAllOutlines()
     {
