@@ -1943,7 +1943,8 @@ MonoBehaviour:
   sweepCheckmark: {fileID: 1669949408}
   wipeCheckmark: {fileID: 550463711}
   trashCheckmark: {fileID: 2075821620}
-  actionTask: {fileID: 210292222}
+  sweepAction: {fileID: 210292222}
+  wipeAction: {fileID: 2133499444}
   list: {fileID: 833472562}
 --- !u!1001 &210484570
 PrefabInstance:
@@ -4285,7 +4286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &550463710
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7062,8 +7063,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: -21.280518}
-  m_SizeDelta: {x: 100, y: 108.5701}
+  m_AnchoredPosition: {x: 45, y: 22.2326}
+  m_SizeDelta: {x: 100, y: 105.2547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &890624390
 MonoBehaviour:

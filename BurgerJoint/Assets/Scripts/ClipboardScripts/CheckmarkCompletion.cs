@@ -9,7 +9,9 @@ public class CheckmarkCompletion : MonoBehaviour
     public Image wipeCheckmark;
     public Image trashCheckmark;
 
-    public ActionTask actionTask;
+    public ActionTask sweepAction;
+    public ActionTask wipeAction;
+
     public TodoListDisplay list;
 
     void Start()
@@ -21,11 +23,15 @@ public class CheckmarkCompletion : MonoBehaviour
 
     void Update()
     {
-        if (actionTask.actionAreas.Count == 0)
+        if (sweepAction.actionAreas.Count == 0)
         {
             FinishedSweeping();
         }
-        
+        if (wipeAction.actionAreas.Count == 0)
+        {
+            FinishedWiping();
+        }
+
     }
 
     private void FinishedSweeping()
@@ -43,11 +49,19 @@ public class CheckmarkCompletion : MonoBehaviour
 
     private void FinishedWiping()
     {
-
+        if (list.displayList.enabled == true)
+        {
+            wipeCheckmark.enabled = true;
+        }
+        else
+        {
+            wipeCheckmark.enabled = false;
+        }
     }
 
     private void TrashTakenOut()
     {
 
     }
+
 }
