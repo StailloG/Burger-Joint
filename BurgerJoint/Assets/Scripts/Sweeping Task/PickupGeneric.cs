@@ -39,7 +39,7 @@ public class PickupGeneric : MonoBehaviour
         {
             gameObject.transform.parent = player.transform; //ojbect is child of player
             //show all outlines, only for this type 
-            actionTask.ShowAllOutlines();
+            //actionTask.ShowAllOutlines(); //stains show until player cleans it up
             var i =player.GetComponent<HandState>();
             i.CurrentHandState = pickupType;
             

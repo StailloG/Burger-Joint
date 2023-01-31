@@ -11,7 +11,7 @@ public class ActionTask : MonoBehaviour
 
     private void Start()
     {
-        HideAllOutLines();
+        //HideAllOutLines();
     }
 
     public void ShowAllOutlines()
