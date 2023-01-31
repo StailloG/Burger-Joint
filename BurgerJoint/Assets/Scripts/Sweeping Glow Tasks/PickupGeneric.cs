@@ -52,7 +52,7 @@ public class PickupGeneric : MonoBehaviour
         {
             transform.parent = null; //drop object
             //hide all outlines
-           actionTask.HideAllOutLines(); 
+           //actionTask.HideAllOutLines(); 
             
             var i =player.GetComponent<HandState>();
             i.CurrentHandState = PickupType.NONE;

@@ -15,8 +15,6 @@ public class OutlineManager : MonoBehaviour
         outlineScript = GetComponent<Outline>();
     }
 
-  
-
     public void ShowOutline()
     {
        // outlineScript.enabled = true;

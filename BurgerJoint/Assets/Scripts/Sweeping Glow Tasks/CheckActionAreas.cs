@@ -14,13 +14,11 @@ public class CheckActionAreas : MonoBehaviour
 
     [SerializeField] private bool isItemNear;
 
-    private ActionTask actionTask; 
-    //private StainsActionTask actionTask;
+    private ActionTask actionTask;
 
     private void Awake()
     {
         actionTask = GetComponentInParent<ActionTask>();
-       // actionTask = GetComponentInParent<StainsActionTask>();
     }
 
     void Update()
@@ -34,7 +32,6 @@ public class CheckActionAreas : MonoBehaviour
 
     public void AttemptCleanAction()
     {
-       // GetComponent<StainsManager>().RemoveStains();
        GetComponent<OutlineManager>().HideOutline();
         actionTask.RemoveSelf(this);
     }
