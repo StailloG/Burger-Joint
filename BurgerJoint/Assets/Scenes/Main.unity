@@ -1884,7 +1884,6 @@ GameObject:
   m_Component:
   - component: {fileID: 210292221}
   - component: {fileID: 210292222}
-  - component: {fileID: 210292223}
   m_Layer: 0
   m_Name: Sweeping Task
   m_TagString: Untagged
@@ -1928,24 +1927,6 @@ MonoBehaviour:
   - {fileID: 430739183}
   - {fileID: 1299807861}
   - {fileID: 272643564}
---- !u!114 &210292223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210292220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5480a3a157549354fa8b4d238a366fb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sweepCheckmark: {fileID: 1669949408}
-  wipeCheckmark: {fileID: 550463711}
-  trashCheckmark: {fileID: 2075821620}
-  sweepAction: {fileID: 210292222}
-  wipeAction: {fileID: 2133499444}
-  list: {fileID: 833472562}
 --- !u!1001 &210484570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6809,6 +6790,24 @@ MonoBehaviour:
   listOnClipboard: {fileID: 89594313}
   isPlayerNear: 0
   grabbedList: 0
+--- !u!114 &833472566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833472559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5480a3a157549354fa8b4d238a366fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sweepCheckmark: {fileID: 1669949408}
+  wipeCheckmark: {fileID: 550463711}
+  trashCheckmark: {fileID: 2075821620}
+  sweepAction: {fileID: 210292222}
+  wipeAction: {fileID: 2133499444}
+  list: {fileID: 833472562}
 --- !u!1 &852691137
 GameObject:
   m_ObjectHideFlags: 0
