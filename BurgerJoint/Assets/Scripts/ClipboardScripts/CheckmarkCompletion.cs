@@ -10,6 +10,7 @@ public class CheckmarkCompletion : MonoBehaviour
     public Image trashCheckmark;
 
     public ActionTask actionTask;
+    public TodoListDisplay list;
 
     void Start()
     {
@@ -29,7 +30,15 @@ public class CheckmarkCompletion : MonoBehaviour
 
     private void FinishedSweeping()
     {
-        Debug.Log("List is empty");
+        if (list.displayList.enabled == true)
+        {
+            sweepCheckmark.enabled = true;
+        }
+        else
+        {
+            sweepCheckmark.enabled = false;
+        }
+       
     }
 
     private void FinishedWiping()
