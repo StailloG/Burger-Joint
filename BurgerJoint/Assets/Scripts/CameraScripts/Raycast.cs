@@ -36,7 +36,12 @@ public class Raycast : MonoBehaviour
     {
         RaycastHit();
 
-       // Drop();
+        if (holdingItem == true)
+        {
+            // Drop();
+        }
+
+
     }
 
     /*
@@ -53,8 +58,8 @@ public class Raycast : MonoBehaviour
 
             // Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitinfo.distance, Color.green); //shows the raycast line
 
-            //identifies ingredient
-            IdentifyIngredient(hitinfo, "Tomato");
+            //identifies ingredient inventory
+            //IdentifyIngredient(hitinfo, "Tomato");
             
         }
         else
@@ -69,12 +74,10 @@ public class Raycast : MonoBehaviour
      * 
      * If player presses 'spacebar', uses the PickUp() method to pick up the ingredient.
      */
-    private void IdentifyIngredient(RaycastHit ray, string name)
+    private void IdentifyIngredientCrate(RaycastHit ray, string name)
     {
         if (ray.collider.CompareTag(name))
         {
-            Debug.Log("A " + name + " has been hit!");
-
             //pickup object
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -94,15 +97,15 @@ public class Raycast : MonoBehaviour
 
         var prefab = Instantiate(itemGrabbed, hand.transform.position, player.transform.rotation);
         prefab.transform.parent = player.transform; //ojbect is child of player
-       // holdingItem = true;
+        holdingItem = true;
     }
 
     private void Drop()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            transform.parent = null;
-         //   holdingItem = false;
+            //transform.parent = null;
+            holdingItem = false;
         }
     }
 }
