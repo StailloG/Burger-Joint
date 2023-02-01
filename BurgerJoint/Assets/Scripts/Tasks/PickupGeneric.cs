@@ -38,6 +38,8 @@ public class PickupGeneric : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             gameObject.transform.parent = player.transform; //ojbect is child of player
+            gameObject.transform.localPosition = new Vector3(0.6f, -0.92f, 1.34f); //at a set position from the player
+
             //show all outlines, only for this type 
             //actionTask.ShowAllOutlines(); //stains show until player cleans it up
             var i =player.GetComponent<HandState>();

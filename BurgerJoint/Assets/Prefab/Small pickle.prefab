@@ -56,9 +56,6 @@ GameObject:
   - component: {fileID: 5393382840153732878}
   - component: {fileID: 7629117569151275095}
   - component: {fileID: 5581156531157005115}
-  - component: {fileID: 5393382840153732875}
-  - component: {fileID: 5393382840153732876}
-  - component: {fileID: 5393382840153732877}
   m_Layer: 0
   m_Name: Small pickle
   m_TagString: Untagged
@@ -132,48 +129,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5393382840153732875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7714586782976375413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80092a2978da2e5489f2f88818966893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canPickUp: 0
-  spacePressedAllowed: 0
-  playerHand: {fileID: 0}
-  ingredient: {fileID: 7714586782976375413}
---- !u!54 &5393382840153732876
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7714586782976375413}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &5393382840153732877
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7714586782976375413}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.3605006, y: 10.047199, z: 2.246229}
-  m_Center: {x: -0.07134998, y: 0.5445829, z: 0.12904097}

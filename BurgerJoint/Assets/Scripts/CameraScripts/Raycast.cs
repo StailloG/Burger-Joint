@@ -23,6 +23,7 @@ public class Raycast : MonoBehaviour
     [SerializeField] private float distance = 10f;
     [SerializeField] private bool holdingItem = false;
     private GameObject player;
+    public GameObject ingredients;
     public GameObject hand;
     public TextMeshProUGUI raycastDot;
 
@@ -55,12 +56,10 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out RaycastHit hitinfo, distance, layerMask))
         {
             raycastDot.color = Color.red;
-
             // Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitinfo.distance, Color.green); //shows the raycast line
 
-            //identifies ingredient inventory
-            //IdentifyIngredient(hitinfo, "Tomato");
-            
+            //if player's raycast hits the ingredient crate
+            IngredientCrate(hitinfo, "Ingredient");
         }
         else
         {
@@ -74,14 +73,14 @@ public class Raycast : MonoBehaviour
      * 
      * If player presses 'spacebar', uses the PickUp() method to pick up the ingredient.
      */
-    private void IdentifyIngredientCrate(RaycastHit ray, string name)
+    private void IngredientCrate(RaycastHit ray, string name)
     {
         if (ray.collider.CompareTag(name))
         {
             //pickup object
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                PickUp(ray);
+                SpawnIngredients(ray);
             }
         }
     }
@@ -91,12 +90,15 @@ public class Raycast : MonoBehaviour
      * Instantiates a prefab so that the player is holding the ingredient.
      * The prefab is now a child of the player.
      */
-    private void PickUp(RaycastHit ray)
+    private void SpawnIngredients(RaycastHit ray)
     {
-        GameObject itemGrabbed = ray.collider.gameObject;
+        //GameObject itemGrabbed = ray.collider.gameObject;
+        //var prefab = Instantiate(itemGrabbed, hand.transform.position, player.transform.rotation);
 
-        var prefab = Instantiate(itemGrabbed, hand.transform.position, player.transform.rotation);
+        var pos = gameObject.transform.localPosition = new Vector3(-1.32f, 0.43f, 1.44f);
+        var prefab = Instantiate(ingredients, pos, player.transform.rotation);
         prefab.transform.parent = player.transform; //ojbect is child of player
+
         holdingItem = true;
     }
 

@@ -10,7 +10,6 @@ TagManager:
   - Cloth
   - DirtyFloor
   - Ingredient
-  - Tomato
   - Stain
   layers:
   - Default
