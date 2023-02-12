@@ -92,14 +92,17 @@ public class Raycast : MonoBehaviour
      */
     private void SpawnIngredients(RaycastHit ray)
     {
-        //GameObject itemGrabbed = ray.collider.gameObject;
-        //var prefab = Instantiate(itemGrabbed, hand.transform.position, player.transform.rotation);
+        ////var pos = new Vector3(-1.78f, 0.44f, 0.62f);
+        //var pos = new Vector3(0f, 0f, 0f);
 
-        var pos = gameObject.transform.localPosition = new Vector3(-1.32f, 0.43f, 1.44f);
-        var prefab = Instantiate(ingredients, pos, player.transform.rotation);
-        prefab.transform.parent = player.transform; //ojbect is child of player
+        //var prefab = Instantiate(ingredients, pos, Quaternion.identity);
+        //prefab.transform.parent = player.transform; //ojbect is child of player
 
-        holdingItem = true;
+        var playerForward = player.transform.forward;
+        var pos = ray.point + playerForward * 1;
+
+        var prefab = Instantiate(ingredients, pos, Quaternion.identity);
+        prefab.transform.parent = hand.transform; //ojbect is child of player
     }
 
     private void Drop()
