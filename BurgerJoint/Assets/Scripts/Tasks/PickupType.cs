@@ -2,5 +2,9 @@
 {
     NONE,
     BROOM,
-    CLOTH
+    CLOTH,
+    TOPPINGS,
+    MEAT,
+    FRIES,
+    SODA
 }
