@@ -7524,6 +7524,8 @@ MonoBehaviour:
   ingredients: {fileID: 4493670418730565248, guid: b726825fc207b7649a27746185847600, type: 3}
   hand: {fileID: 1976976714}
   raycastDot: {fileID: 1189604302}
+  prefab: {fileID: 4493670418730565248, guid: b726825fc207b7649a27746185847600, type: 3}
+  toppingsRB: {fileID: 7310490360378045633, guid: b726825fc207b7649a27746185847600, type: 3}
 --- !u!1001 &963763001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17602,10 +17604,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1294395572}
     m_Modifications:
-    - target: {fileID: 2409083299638213383, guid: b726825fc207b7649a27746185847600, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4493670418730565248, guid: b726825fc207b7649a27746185847600, type: 3}
       propertyPath: m_Name
       value: IngredientsAssembled
@@ -17667,7 +17665,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 2409083299638213383, guid: b726825fc207b7649a27746185847600, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b726825fc207b7649a27746185847600, type: 3}
 --- !u!23 &4539702727384575233
 MeshRenderer:

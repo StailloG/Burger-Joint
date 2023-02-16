@@ -27,6 +27,7 @@ public class Raycast : MonoBehaviour
     public GameObject hand;
     public TextMeshProUGUI raycastDot;
 
+    public GameObject prefab;
 
     private void Start()
     {
@@ -39,10 +40,8 @@ public class Raycast : MonoBehaviour
 
         if (holdingItem == true)
         {
-            // Drop();
+            Drop();
         }
-
-
     }
 
     /*
@@ -86,22 +85,16 @@ public class Raycast : MonoBehaviour
     }
 
     /*
-     * Sets the new GameObject to the item the ray is hitting.
-     * Instantiates a prefab so that the player is holding the ingredient.
-     * The prefab is now a child of the player.
+     * Instantiates & childs the ingredient toppings to the parent.
+     * 
+     * Vector3 of player pos & pos of raycast makes the toppings spawn in front of player.
      */
     private void SpawnIngredients(RaycastHit ray)
     {
-        ////var pos = new Vector3(-1.78f, 0.44f, 0.62f);
-        //var pos = new Vector3(0f, 0f, 0f);
-
-        //var prefab = Instantiate(ingredients, pos, Quaternion.identity);
-        //prefab.transform.parent = player.transform; //ojbect is child of player
-
         var playerForward = player.transform.forward;
         var pos = ray.point + playerForward * 1;
 
-        var prefab = Instantiate(ingredients, pos, Quaternion.identity);
+        prefab = Instantiate(ingredients, pos, Quaternion.identity);
         prefab.transform.parent = hand.transform; //ojbect is child of player
     }
 
@@ -109,8 +102,7 @@ public class Raycast : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //transform.parent = null;
-            holdingItem = false;
+            prefab.transform.parent = null;
         }
     }
 }
