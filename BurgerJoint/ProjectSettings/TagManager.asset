@@ -11,6 +11,8 @@ TagManager:
   - DirtyFloor
   - Ingredient
   - Stain
+  - Fryer
+  - SodaMachine
   layers:
   - Default
   - TransparentFX
