@@ -65,7 +65,7 @@ public class PlayerFootsteps : MonoBehaviour
             case FootstepType.CARPET:
                 return carpetFootsteps[Random.Range(0, carpetFootsteps.Count)];
             default:
-                Debug.Log("Default footstep being called");
+              //  Debug.Log("Default footstep being called");
                 return tileFootsteps[Random.Range(0, tileFootsteps.Count)];
                 
             

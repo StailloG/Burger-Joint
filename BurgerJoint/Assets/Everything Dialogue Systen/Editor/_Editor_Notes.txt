@@ -1,3 +1,0 @@
-Put anything made for the editor in here
-	Like. . .
-Custom Inspectors
