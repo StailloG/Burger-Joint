@@ -6,6 +6,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    [SerializeField] private float interactDistance = 2f;
+    //this hand object is used to determine direction from middle of screen
+    //this is because the camera is currenlt set at an angle 
+    [SerializeField] private GameObject hand;
     private float hInput;
     private float vInput;
     private CharacterController charController;
@@ -23,6 +27,23 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
+    private void Update()
+    {
+        HandleInteractions();
+    }
+
+    private void HandleInteractions()
+    {
+        Vector3 camDirection = transform.position - hand.transform.position;
+        if (Physics.Raycast(transform.position, camDirection, out RaycastHit raycastHit, interactDistance))
+        {
+            Debug.Log(raycastHit.transform);
+        }
+        else
+        {
+          
+        }
+    }
     private void HandleMovement()
     {
         //call horizontal & vertical inputs
@@ -47,4 +68,15 @@ public class PlayerMovement : MonoBehaviour
         return charController.velocity != Vector3.zero;
     }
     
+    
+    void OnDrawGizmosSelected()
+    {
+        
+            // Draws a blue line from this transform to the target
+            Gizmos.color = Color.blue;
+            Vector3 endpoint = transform.position + interactDistance *  transform.position - hand.transform.position;
+            
+             Gizmos.DrawLine(transform.position, endpoint);
+
+    }
 }
