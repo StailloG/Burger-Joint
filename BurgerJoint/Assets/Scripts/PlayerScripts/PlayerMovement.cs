@@ -15,11 +15,34 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController charController;
     private const float Gravity = 9.81f;
     private float vSpeed;
+    [SerializeField] private LayerMask counterLayerMask;
+    [SerializeField] private InputManager inputManager;
     void Awake()
     {
         charController = GetComponent<CharacterController>();
     }
 
+    private void Start()
+    {
+        inputManager.OnInteractAction += InputManager_OnInteractAction;
+    }
+
+    private void InputManager_OnInteractAction(object sender, EventArgs e)
+    {
+        Ray CameraRay = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        if (Physics.Raycast(CameraRay, out RaycastHit hitInfo, interactDistance, counterLayerMask))
+        {
+            if (hitInfo.transform.TryGetComponent(out ClearCounter clearCounter))
+            {
+                clearCounter.Interact();
+            }
+            
+        }
+        else
+        {
+          
+        }
+    }
 
     void FixedUpdate()
     {
@@ -29,15 +52,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        HandleInteractions();
+        //HandleInteractions();
     }
 
     private void HandleInteractions()
     {
-        Vector3 camDirection = transform.position - hand.transform.position;
-        if (Physics.Raycast(transform.position, camDirection, out RaycastHit raycastHit, interactDistance))
+        Ray CameraRay = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        if (Physics.Raycast(CameraRay, out RaycastHit hitInfo, interactDistance, counterLayerMask))
         {
-            Debug.Log(raycastHit.transform);
+            if (hitInfo.transform.TryGetComponent(out ClearCounter clearCounter))
+            {
+                clearCounter.Interact();
+            }
+            
         }
         else
         {
