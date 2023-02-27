@@ -3,8 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// This script handles movement and interaction logic 
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
+
+    public static PlayerMovement Instance { get; private set; }
+    public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
+
+    public class OnSelectedCounterChangedEventArgs : EventArgs
+    {
+        public ClearCounter selectedCounter;
+    }
+    
     public float speed;
     [SerializeField] private float interactDistance = 2f;
     //this hand object is used to determine direction from middle of screen
@@ -17,8 +30,11 @@ public class PlayerMovement : MonoBehaviour
     private float vSpeed;
     [SerializeField] private LayerMask counterLayerMask;
     [SerializeField] private InputManager inputManager;
+    private ClearCounter selectedCounter;
+    
     void Awake()
     {
+        Instance = this;
         charController = GetComponent<CharacterController>();
     }
 
@@ -29,19 +45,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void InputManager_OnInteractAction(object sender, EventArgs e)
     {
-        Ray CameraRay = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-        if (Physics.Raycast(CameraRay, out RaycastHit hitInfo, interactDistance, counterLayerMask))
+        if (selectedCounter != null)
         {
-            if (hitInfo.transform.TryGetComponent(out ClearCounter clearCounter))
-            {
-                clearCounter.Interact();
-            }
-            
+            selectedCounter.Interact();
         }
-        else
-        {
-          
-        }
+        
+      
     }
 
     void FixedUpdate()
@@ -52,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //HandleInteractions();
+        HandleInteractions();
     }
 
     private void HandleInteractions()
@@ -60,16 +69,31 @@ public class PlayerMovement : MonoBehaviour
         Ray CameraRay = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         if (Physics.Raycast(CameraRay, out RaycastHit hitInfo, interactDistance, counterLayerMask))
         {
+            //we are checking if the object that the raycast hits has a clearcounter script
             if (hitInfo.transform.TryGetComponent(out ClearCounter clearCounter))
             {
-                clearCounter.Interact();
+                if (clearCounter != selectedCounter)
+                {
+                    selectedCounter = clearCounter;
+                    SetSelectedCounter(clearCounter);
+
+                }
+            }
+            else
+            {
+                selectedCounter = null;
+                SetSelectedCounter(null);
+
             }
             
         }
         else
         {
-          
+            selectedCounter = null;
+            SetSelectedCounter(null);
         }
+
+        
     }
     private void HandleMovement()
     {
@@ -94,8 +118,16 @@ public class PlayerMovement : MonoBehaviour
     {
         return charController.velocity != Vector3.zero;
     }
-    
-    
+
+    private void SetSelectedCounter(ClearCounter selectedCounter)
+    {
+        this.selectedCounter = selectedCounter;
+        OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs
+        {
+            selectedCounter = selectedCounter
+        });
+    }
+
     void OnDrawGizmosSelected()
     {
         
