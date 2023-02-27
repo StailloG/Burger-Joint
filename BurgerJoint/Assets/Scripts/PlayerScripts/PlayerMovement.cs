@@ -101,7 +101,10 @@ public class PlayerMovement : MonoBehaviour
         hInput = Input.GetAxis("Horizontal");
         vInput = Input.GetAxis("Vertical");
 
-        Vector3 velocity = transform.forward * (vInput * speed) + transform.right * hInput;
+
+        //this temp var is so that moving sideways is slightly slower than moving forwards and back
+        float sidewaySpeedBuffer = 0.667f;
+        Vector3 velocity = transform.forward * (vInput * speed) + transform.right *( hInput* speed * sidewaySpeedBuffer);
         if (charController.isGrounded)
             vSpeed = 0;
 
