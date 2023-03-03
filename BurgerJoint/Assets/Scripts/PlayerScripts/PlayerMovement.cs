@@ -7,7 +7,7 @@ using UnityEngine;
 /// <summary>
 /// This script handles movement and interaction logic 
 /// </summary>
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IKitchenObjectParent
 {
 
     public static PlayerMovement Instance { get; private set; }
@@ -31,7 +31,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask counterLayerMask;
     [SerializeField] private InputManager inputManager;
     private ClearCounter selectedCounter;
-    
+    private KitchenObject kitchenObject;
+    [SerializeField] private Transform kitchenObjectHoldPoint;
+
     void Awake()
     {
         Instance = this;
@@ -47,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (selectedCounter != null)
         {
-            selectedCounter.Interact();
+            selectedCounter.Interact(this);
         }
         
       
@@ -141,4 +143,31 @@ public class PlayerMovement : MonoBehaviour
              Gizmos.DrawLine(transform.position, endpoint);
 
     }
+
+    public Transform GetKitchenObjectFollowTransform()
+    {
+        return kitchenObjectHoldPoint;
+    }
+
+
+    public void SetKitchenObject(KitchenObject kitchenObject)
+    {
+        this.kitchenObject = kitchenObject;
+    }
+
+    public KitchenObject GetKitchenObject()
+    {
+        return kitchenObject;
+    }
+
+    public void ClearKitchenObject()
+    {
+        kitchenObject = null;
+    }
+
+    public bool HasKitchenObject()
+    {
+        return kitchenObject != null;
+    }
+
 }
