@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour, IKitchenObjectParent
 
     public class OnSelectedCounterChangedEventArgs : EventArgs
     {
-        public ClearCounter selectedCounter;
+        public BaseCounter selectedCounter;
     }
     
     public float speed;
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour, IKitchenObjectParent
     private float vSpeed;
     [SerializeField] private LayerMask counterLayerMask;
     [SerializeField] private InputManager inputManager;
-    private ClearCounter selectedCounter;
+    private BaseCounter selectedCounter;
     private KitchenObject kitchenObject;
     [SerializeField] private Transform kitchenObjectHoldPoint;
 
@@ -72,12 +72,12 @@ public class PlayerMovement : MonoBehaviour, IKitchenObjectParent
         if (Physics.Raycast(CameraRay, out RaycastHit hitInfo, interactDistance, counterLayerMask))
         {
             //we are checking if the object that the raycast hits has a clearcounter script
-            if (hitInfo.transform.TryGetComponent(out ClearCounter clearCounter))
+            if (hitInfo.transform.TryGetComponent(out BaseCounter baseCounter))
             {
-                if (clearCounter != selectedCounter)
+                if (baseCounter != selectedCounter)
                 {
-                    selectedCounter = clearCounter;
-                    SetSelectedCounter(clearCounter);
+                    selectedCounter = baseCounter;
+                    SetSelectedCounter(baseCounter);
 
                 }
             }
@@ -124,7 +124,7 @@ public class PlayerMovement : MonoBehaviour, IKitchenObjectParent
         return charController.velocity != Vector3.zero;
     }
 
-    private void SetSelectedCounter(ClearCounter selectedCounter)
+    private void SetSelectedCounter(BaseCounter selectedCounter)
     {
         this.selectedCounter = selectedCounter;
         OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs
