@@ -11,11 +11,11 @@ public class MusicLayerSystem : MonoBehaviour
 {
   [SerializeField] private AudioClip[] audioStems;
   [SerializeField] private float fadeInTime = 1.5f;
-  [SerializeField] private float fadeOutTime = 1.5f;
+ // [SerializeField] private float fadeOutTime = 1.5f;
   
   private AudioSource[] audioSources;
   
-  private int currentIntensity = 0;//currentIntensity = 0 is the first music layer playing  
+//  private int currentIntensity = 0;//currentIntensity = 0 is the first music layer playing  
   
   private int amountOfStems;
   private float musicVolumeMax = 1f;

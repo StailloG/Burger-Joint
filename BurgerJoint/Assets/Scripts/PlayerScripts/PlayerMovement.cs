@@ -43,6 +43,15 @@ public class PlayerMovement : MonoBehaviour, IKitchenObjectParent
     private void Start()
     {
         inputManager.OnInteractAction += InputManager_OnInteractAction;
+        inputManager.OnInteractAlternateAction += InputManager_OnInteractAlternateAction;
+    }
+
+    private void InputManager_OnInteractAlternateAction(object sender, EventArgs e)
+    {
+        if (selectedCounter != null)
+        {
+            selectedCounter.InteractAlternate(this);
+        }
     }
 
     private void InputManager_OnInteractAction(object sender, EventArgs e)

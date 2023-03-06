@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4599568971219292645, guid: 90bb2eb298aebfb409a1e2e6a19abde9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.34
+      objectReference: {fileID: 0}
     - target: {fileID: 6014422589034155169, guid: 90bb2eb298aebfb409a1e2e6a19abde9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -84,8 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76721c58c93d89b4b9bad2cbc8911b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kitchenObjectSo: {fileID: 11400000, guid: 55dd459fff681054eab58251bcbcc6df, type: 2}
   counterTopPoint: {fileID: 3794570528366949553}
+  kitchenObjectSo: {fileID: 11400000, guid: 55dd459fff681054eab58251bcbcc6df, type: 2}
 --- !u!1001 &7279994876349225652
 PrefabInstance:
   m_ObjectHideFlags: 0
