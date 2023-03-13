@@ -6,7 +6,7 @@ using UnityEngine;
 public class CuttingCounter : BaseCounter
 {
     public event EventHandler OnCut;
-//stopped at 4:51
+
     [SerializeField] private CuttingRecipeSO[] cuttingRecipeSOArray;
     private int cuttingProgress;
     public override void Interact(PlayerMovement player)

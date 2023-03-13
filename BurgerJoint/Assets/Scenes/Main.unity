@@ -12135,6 +12135,63 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3135101, y: 2.5236814, z: 2.753298}
   m_Center: {x: 0.15675539, y: 1.0855476, z: -0.058369227}
+--- !u!1001 &1502313368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.7127314
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.024704933
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.070656
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7169868
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.69708675
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -88.387
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770609, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185908692960770622, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
+      propertyPath: m_Name
+      value: StoveCounter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 62973af6ced5f1146908eeb36ab5d786, type: 3}
 --- !u!65 &1524546483
 BoxCollider:
   m_ObjectHideFlags: 0
