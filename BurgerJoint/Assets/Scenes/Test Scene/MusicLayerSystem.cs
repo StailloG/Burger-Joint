@@ -6,32 +6,51 @@ using UnityEngine.Audio;
 using UnityEngine.PlayerLoop;
 
 /// <summary>
-/// A script that automatically spawns audiosources and creates a user controlled music system with layers. 
+/// A script that automatically spawns audiosources based on the amount of audioclips
+/// and creates a user controlled music system with layers. The public Methods of the system are
+/// Start
+/// Stop
+/// Increase Intensity
+/// Decrease Intensity
+/// Author: Peterson Normil petersonnormil@gmail.com
 /// </summary>
 public class MusicLayerSystem : MonoBehaviour
 {
+  [Tooltip("the music clips you will place in, each clip is one layer")]
   [SerializeField] private AudioClip[] audioStems;
   
+  [Tooltip("The time it takes to fade in for start and increasing intensity")]
   [SerializeField][Range(0.01f, 12f)] private float fadeInTime = 1.5f;
+  
+  [Tooltip("The time it takes to fade out for stop and decreasing intensity")]
   [SerializeField][Range(0.01f, 12f)] private float fadeOutTime = 1.5f;
   
-  //set your audiosources to one music group
+  [Tooltip("If you are using the Unity Audio Mixer, this is where they will be routed to, else leave empty")]
   [SerializeField] private AudioMixerGroup musicMixerGroup; 
   
+  //the audiosources that will be playing the clips
   private AudioSource[] audioSources;
   
- 
-  private int currentIntensity = 0;//currentIntensity = 0 is the first music layer playing  
+  //currentIntensity = 0 means the first music layer will play when you start the system
+  private int currentIntensity = 0; 
   
+  //helper variable to iniliaze the audiosources 
   private int amountOfStems;
-  private const float MusicVolumeMax = 1f;
   
+  //The max music volume, the fade in will go up to this value
+  private const float MusicVolumeMax = 1f;
   
   //currently used as a way to stop multiple starts
   private bool musicSystemIsOn = false;
 
   private void Awake()
   {
+    Init();
+  }
+
+  private void Init()
+  {
+    
     amountOfStems = audioStems.Length;
 
     if (amountOfStems <= 0)
@@ -41,11 +60,6 @@ public class MusicLayerSystem : MonoBehaviour
     }
     audioSources = new AudioSource[amountOfStems];
     
-    Init();
-  }
-
-  private void Init()
-  {
     for (int i = 0; i < amountOfStems; i++)
     {
       //spawn all the audiosources
@@ -58,14 +72,15 @@ public class MusicLayerSystem : MonoBehaviour
       //assign clip to the audioSource
       newAudioSource.clip = audioStems[i];
 
-      newAudioSource.outputAudioMixerGroup = musicMixerGroup;
+      if(musicMixerGroup != null)
+        newAudioSource.outputAudioMixerGroup = musicMixerGroup;
       
       //add to the audioSources array
       audioSources[i] = newAudioSource;
     }
   }
   
-  //start 
+  
   public void StartMusicSystem()
   {
     //if music system already on, dont continue 
@@ -85,7 +100,7 @@ public class MusicLayerSystem : MonoBehaviour
     currentIntensity = 0;
   }
   
-  //stop
+
   /// <summary>
   /// Does a complete stop of the music system 
   /// </summary>
@@ -101,7 +116,9 @@ public class MusicLayerSystem : MonoBehaviour
     StartCoroutine(StopAudioSourcesAfterElapsedTime());
   }
   
-  //helper method to stop all the audio sources after the fadeOutTime is finished
+  /// <summary>
+  /// helper method to stop all the audio sources after the fadeOutTime is finished
+  /// </summary>
   private IEnumerator StopAudioSourcesAfterElapsedTime()
   {
     yield return new WaitForSeconds(fadeOutTime);
@@ -112,7 +129,7 @@ public class MusicLayerSystem : MonoBehaviour
     musicSystemIsOn = false;
   }
   
-  //increase intensity 
+
   public void IncreaseIntensity()
   {
     if (!musicSystemIsOn) return;
@@ -128,7 +145,7 @@ public class MusicLayerSystem : MonoBehaviour
   }
   
   
-  //decrease intensity 
+
   public void DecreaseIntensity()
   {
     if (!musicSystemIsOn) return;
@@ -143,12 +160,9 @@ public class MusicLayerSystem : MonoBehaviour
   }
   
   
-  //fade in 
-  //What is benefit of ienumerator 
+  
   //instead of cluttering code, we use coroutine so its happening at a fixed frame rate,
   //and it uses less CPU cycles since the update function is happening every frame 
-
-
   private IEnumerator FadeInMusicStem(AudioSource activeSource, float transitionTime)
   {
     activeSource.volume = 0.0f;
@@ -163,7 +177,7 @@ public class MusicLayerSystem : MonoBehaviour
     activeSource.volume = MusicVolumeMax; 
 
   }
-  //fade out 
+
   private IEnumerator FadeOutMusicStem(AudioSource activeSource, float transitionTime)
   {
 
