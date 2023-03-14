@@ -6,7 +6,14 @@ using UnityEngine;
 public class StoveCounter : BaseCounter
 {
 
-    private enum State
+    public event EventHandler<OnStateChangedEventArgs> OnStateChanged;
+
+    public class OnStateChangedEventArgs : EventArgs
+    {
+        public State state;
+    }
+    
+    public enum State
     {
         Idle,
         Frying,
@@ -43,6 +50,10 @@ public class StoveCounter : BaseCounter
                         burningRecipeSo = getBurningRecipeSoRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
                         currentState = State.Fried;
                         burningTimer = 0f;
+                        OnStateChanged?.Invoke(this, new OnStateChangedEventArgs
+                        {
+                            state = currentState
+                        });
                     }
                     break;
             
@@ -54,6 +65,10 @@ public class StoveCounter : BaseCounter
                         GetKitchenObject().DestroySelf();
                         KitchenObject.SpawnKitchenObject(burningRecipeSo.output, this);
                         currentState = State.Burned;
+                        OnStateChanged?.Invoke(this, new OnStateChangedEventArgs
+                        {
+                            state = currentState
+                        });
                     }
                     break;
             
@@ -79,6 +94,10 @@ public class StoveCounter : BaseCounter
                     fryingRecipeSO = GetFryingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
                     currentState = State.Frying;
                     fryingTimer = 0;
+                    OnStateChanged?.Invoke(this, new OnStateChangedEventArgs
+                    {
+                        state = currentState
+                    });
                 }
                
             }
@@ -101,6 +120,10 @@ public class StoveCounter : BaseCounter
         
                 GetKitchenObject().SetKitchenObjectParent(player);
                 currentState = State.Idle;
+                OnStateChanged?.Invoke(this, new OnStateChangedEventArgs
+                {
+                    state = currentState
+                });
             }
         }
         
