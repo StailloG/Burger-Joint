@@ -14,15 +14,21 @@ public class MusicLayerSystem : MonoBehaviour
   
   [SerializeField][Range(0.01f, 12f)] private float fadeInTime = 1.5f;
   [SerializeField][Range(0.01f, 12f)] private float fadeOutTime = 1.5f;
+  
   //set your audiosources to one music group
-  public AudioMixerGroup musicMixerGroup; 
+  [SerializeField] private AudioMixerGroup musicMixerGroup; 
   
   private AudioSource[] audioSources;
   
+ 
   private int currentIntensity = 0;//currentIntensity = 0 is the first music layer playing  
   
   private int amountOfStems;
-  private float musicVolumeMax = 1f;
+  private const float MusicVolumeMax = 1f;
+  
+  
+  //currently used as a way to stop multiple starts
+  private bool musicSystemIsOn = false;
 
   private void Awake()
   {
@@ -62,7 +68,10 @@ public class MusicLayerSystem : MonoBehaviour
   //start 
   public void StartMusicSystem()
   {
-
+    //if music system already on, dont continue 
+    if (musicSystemIsOn) return;
+    musicSystemIsOn = true;
+    
     audioSources[0].Play();
     //fade in first audiosource
     StartCoroutine(FadeInMusicStem(audioSources[0],fadeInTime));
@@ -76,20 +85,44 @@ public class MusicLayerSystem : MonoBehaviour
     currentIntensity = 0;
   }
   
-  //stop 
+  //stop
+  /// <summary>
+  /// Does a complete stop of the music system 
+  /// </summary>
+  public void StopMusicSystem()
+  {
+    if(!musicSystemIsOn) return;
+    
+    foreach (AudioSource musicSource in audioSources)
+    {
+      StartCoroutine(FadeOutMusicStem(musicSource, fadeOutTime));
+    }
+
+    StartCoroutine(StopAudioSourcesAfterElapsedTime());
+  }
   
+  //helper method to stop all the audio sources after the fadeOutTime is finished
+  private IEnumerator StopAudioSourcesAfterElapsedTime()
+  {
+    yield return new WaitForSeconds(fadeOutTime);
+    foreach (AudioSource musicSource in audioSources)
+    {
+      musicSource.Stop();
+    }
+    musicSystemIsOn = false;
+  }
   
   //increase intensity 
   public void IncreaseIntensity()
   {
+    if (!musicSystemIsOn) return;
+    
     if (currentIntensity >= amountOfStems - 1)
     {
       Debug.LogWarning("MusicLayerSystem: Already reached highest intensity");
       return;
     }
-
     currentIntensity++;
-
     StartCoroutine(FadeInMusicStem(audioSources[currentIntensity], fadeInTime));
     
   }
@@ -98,6 +131,8 @@ public class MusicLayerSystem : MonoBehaviour
   //decrease intensity 
   public void DecreaseIntensity()
   {
+    if (!musicSystemIsOn) return;
+
     if (currentIntensity <= 0)
     {
       Debug.LogWarning("MusicLayerSystem: Already reached lowest intensity");
@@ -105,14 +140,15 @@ public class MusicLayerSystem : MonoBehaviour
     }
     StartCoroutine(FadeOutMusicStem(audioSources[currentIntensity], fadeOutTime));
     currentIntensity--;
-
-   
-    
   }
   
   
   //fade in 
-  //What is an ienumerator 
+  //What is benefit of ienumerator 
+  //instead of cluttering code, we use coroutine so its happening at a fixed frame rate,
+  //and it uses less CPU cycles since the update function is happening every frame 
+
+
   private IEnumerator FadeInMusicStem(AudioSource activeSource, float transitionTime)
   {
     activeSource.volume = 0.0f;
@@ -120,11 +156,11 @@ public class MusicLayerSystem : MonoBehaviour
 
     for (float t = 0.0f; t <= transitionTime; t += Time.deltaTime)
     {
-      activeSource.volume = (t / transitionTime) * musicVolumeMax;
+      activeSource.volume = (t / transitionTime) * MusicVolumeMax;
       yield return null;
     }
 
-    activeSource.volume = musicVolumeMax; 
+    activeSource.volume = MusicVolumeMax; 
 
   }
   //fade out 
@@ -133,12 +169,11 @@ public class MusicLayerSystem : MonoBehaviour
 
     for (float t = 0.0f; t <= transitionTime; t += Time.deltaTime)
     {
-      activeSource.volume = (musicVolumeMax -((t / transitionTime) * musicVolumeMax));
+      activeSource.volume = (MusicVolumeMax -((t / transitionTime) * MusicVolumeMax));
       yield return null;
     }
     activeSource.mute = true;
 
-    activeSource.volume = musicVolumeMax; 
-
+    activeSource.volume = MusicVolumeMax;
   }
 }
