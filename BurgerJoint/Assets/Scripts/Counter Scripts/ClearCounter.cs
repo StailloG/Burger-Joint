@@ -26,13 +26,30 @@ public class ClearCounter : BaseCounter
       //there is already a kitchen object on the counter
       if (player.HasKitchenObject())
       {
-        
+        if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
+        {
+         
+          if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+          {
+            GetKitchenObject().DestroySelf();
+
+          }
+        }
+        else
+        {
+          if (GetKitchenObject().TryGetPlate(out plateKitchenObject))
+          {
+            if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO()))
+            {
+              player.GetKitchenObject().DestroySelf();
+            }
+          }
+        }
       }
       else
       {
         //if player does not have a kitchen object and there is a kitchen obkect on the counter 
-        //place the the object on the counter to the player
-        
+        //place the the object on the counter to the playe
         GetKitchenObject().SetKitchenObjectParent(player);
       }
     }

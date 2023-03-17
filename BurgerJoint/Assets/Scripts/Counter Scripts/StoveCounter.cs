@@ -111,7 +111,23 @@ public class StoveCounter : BaseCounter
             //there is already a kitchen object on the counter
             if (player.HasKitchenObject())
             {
-        
+                if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
+                {
+         
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySelf();
+                        currentState = State.Idle;
+                        OnStateChanged?.Invoke(this, new OnStateChangedEventArgs
+                        {
+                            state = currentState
+                        });
+                        
+
+                    }
+          
+
+                }
             }
             else
             {

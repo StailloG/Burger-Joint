@@ -123,59 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &450852454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 450852455}
-  - component: {fileID: 450852456}
-  m_Layer: 0
-  m_Name: Music Layer System
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &450852455
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450852454}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &450852456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450852454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7491d69c07cec384db90b6d4e35466f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioStems:
-  - {fileID: 8300000, guid: 54841c532d8665945b7d948a934142a5, type: 3}
-  - {fileID: 8300000, guid: 851261280a287534e969a81e2bed8de4, type: 3}
-  - {fileID: 8300000, guid: 435259d688596cc489abc347fc449bcc, type: 3}
-  - {fileID: 8300000, guid: ee69253e6da54c24992cd5f9cde6be3d, type: 3}
-  - {fileID: 8300000, guid: 5c1e01181124e9344aceedf39e174c56, type: 3}
-  fadeInTime: 1.5
-  fadeOutTime: 1.5
-  musicMixerGroup: {fileID: 6017926495933389195, guid: 9be67df35fcc8944c97854bb91c80bb5, type: 2}
 --- !u!1 &748298239
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &748298240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +220,7 @@ RectTransform:
   - {fileID: 810884177}
   - {fileID: 1675440608}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -417,6 +364,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800754554}
   m_CullTransparentMesh: 1
+--- !u!1 &805196381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 805196382}
+  - component: {fileID: 805196383}
+  m_Layer: 0
+  m_Name: Music Layer System - Battle Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &805196382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805196381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &805196383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805196381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7491d69c07cec384db90b6d4e35466f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioStems:
+  - {fileID: 8300000, guid: ee69253e6da54c24992cd5f9cde6be3d, type: 3}
+  - {fileID: 8300000, guid: 54841c532d8665945b7d948a934142a5, type: 3}
+  - {fileID: 8300000, guid: 5c1e01181124e9344aceedf39e174c56, type: 3}
+  - {fileID: 8300000, guid: 851261280a287534e969a81e2bed8de4, type: 3}
+  - {fileID: 8300000, guid: 435259d688596cc489abc347fc449bcc, type: 3}
+  fadeInTime: 5.09
+  fadeOutTime: 5.21
+  musicMixerGroup: {fileID: 6017926495933389195, guid: 9be67df35fcc8944c97854bb91c80bb5, type: 2}
 --- !u!1 &810884176
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 450852456}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MusicLayerSystem, Assembly-CSharp
         m_MethodName: DecreaseIntensity
         m_Mode: 1
@@ -950,7 +950,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 450852456}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MusicLayerSystem, Assembly-CSharp
         m_MethodName: IncreaseIntensity
         m_Mode: 1
@@ -1221,7 +1221,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 450852456}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MusicLayerSystem, Assembly-CSharp
         m_MethodName: StartMusicSystem
         m_Mode: 1
@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 450852456}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MusicLayerSystem, Assembly-CSharp
         m_MethodName: StopMusicSystem
         m_Mode: 1
@@ -1470,7 +1470,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1716565219
 GameObject:
