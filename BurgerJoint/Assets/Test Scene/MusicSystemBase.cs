@@ -7,25 +7,25 @@ public class MusicSystemBase : MonoBehaviour
 {
     [Header("Music System Base setup")]
     [Tooltip("the music clips you will place in, each clip is one layer")]
-    [SerializeField] private AudioClip[] audioStems;
+    [SerializeField] protected AudioClip[] audioStems;
   
     [Tooltip("The time it takes to fade in for start and increasing intensity")]
-    [SerializeField][Range(0.01f, 12f)] private float fadeInTime = 1.5f;
+    [SerializeField][Range(0.01f, 12f)] protected float fadeInTime = 1.5f;
   
     [Tooltip("The time it takes to fade out for stop and decreasing intensity")]
-    [SerializeField][Range(0.01f, 12f)] private float fadeOutTime = 1.5f;
+    [SerializeField][Range(0.01f, 12f)] protected float fadeOutTime = 1.5f;
   
     [Tooltip("If you are using the Unity Audio Mixer, this is where they will be routed to, else leave empty")]
-    [SerializeField] private AudioMixerGroup musicMixerGroup; 
+    [SerializeField] protected AudioMixerGroup musicMixerGroup; 
   
     //the AudioSources that will be playing the clips
-    private AudioSource[] audioSources;
+    protected AudioSource[] audioSources;
     
     
      protected const float MusicVolumeMax = 1.0f;
     
     //currently used as a way to stop multiple starts
-    private bool musicSystemIsOn = false;
+    protected bool musicSystemIsOn = false;
     
     //helper variable to initialize the AudioSources 
     private int amountOfStems;

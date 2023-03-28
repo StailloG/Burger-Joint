@@ -152,12 +152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503bc5de3f7974543bd39e665bf274ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioStems: []
+  audioStems:
+  - {fileID: 8300000, guid: 99c1bc0948b2ca842bb9c5c8cf06dd38, type: 3}
+  - {fileID: 8300000, guid: da9fbeb61c7203c44b7f3dc7f6dd6433, type: 3}
+  - {fileID: 8300000, guid: e783564e957c9484b9d71396eacf1d72, type: 3}
+  - {fileID: 8300000, guid: f93a1ba43cb561144ba756f6e4240807, type: 3}
+  - {fileID: 8300000, guid: a892182e037332648a20ed2d52e24d93, type: 3}
+  - {fileID: 8300000, guid: 7d2c6ea35c1de974b8a72c02b87a8e70, type: 3}
+  - {fileID: 8300000, guid: 78a3248050a43da45a6b95056525ee09, type: 3}
   fadeInTime: 1.5
   fadeOutTime: 1.5
   musicMixerGroup: {fileID: 0}
   startingSourcesToPlay: 1
-  amountOfChanges: 1
+  amountOfChanges: 5
   mainRandomIntervalTime: 5
   doRandomTimeChange: 0
   maxRandomIntervalTime: 5
