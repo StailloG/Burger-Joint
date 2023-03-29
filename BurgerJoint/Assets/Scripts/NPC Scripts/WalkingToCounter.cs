@@ -4,30 +4,39 @@ using UnityEngine;
 
 public class WalkingToCounter : MonoBehaviour
 {
-    private Rigidbody rb;
-
+    public GameObject customer;
     public float speed = 5;
-
+    //start pos is (0.06, 0.01, 19.61)
     private Vector3 rotate;
     private Vector3 enterRestaurantPos = new Vector3(0.06f, 0.01f, -19.27f);
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    private float rotation1 = 122.69f;
 
     private void FixedUpdate()
     {
-        transform.position += new Vector3(0, 0, -1 * Time.deltaTime);
-
-        Positions(enterRestaurantPos);
+        Pos1(enterRestaurantPos);
     }
 
-    private void Positions(Vector3 pos)
+    /* if player isn't inside the restaurant yet,
+     * keep moving customer until reaches the first position inside the restaurant
+     */
+    private void Pos1(Vector3 pos)
     {
         if (transform.position != pos)
         {
             transform.position = Vector3.MoveTowards(transform.position, enterRestaurantPos, speed * Time.deltaTime);
+
+            if(transform.position == new Vector3(0.06f, 0.01f, -19.27f))
+            {
+                //Rotate the 1st time
+                Rotate(rotation1);
+            }
         }
+    }
+
+    //rotates 
+    private void Rotate(float yRotation)
+    {
+        customer.transform.rotation = Quaternion.Euler(rotate.x, yRotation, rotate.z);
     }
 }
