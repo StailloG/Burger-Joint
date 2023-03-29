@@ -6,11 +6,17 @@ public class WalkingToCounter : MonoBehaviour
 {
     public GameObject customer;
     public float speed = 5;
+    public bool firstPosDone = false;
+    public bool secondPosDone = false;
+
     //start pos is (0.06, 0.01, 19.61)
     private Vector3 rotate;
     private Vector3 enterRestaurantPos = new Vector3(0.06f, 0.01f, -19.27f);
+    private Vector3 walkThruRestaurantPos;
+    private Vector3 walkToCounterPos;
 
     private float rotation1 = 122.69f;
+    private float rotation2;
 
     private void FixedUpdate()
     {
@@ -24,14 +30,20 @@ public class WalkingToCounter : MonoBehaviour
     {
         if (transform.position != pos)
         {
-            transform.position = Vector3.MoveTowards(transform.position, enterRestaurantPos, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime);
 
             if(transform.position == new Vector3(0.06f, 0.01f, -19.27f))
             {
                 //Rotate the 1st time
                 Rotate(rotation1);
+                firstPosDone = true;
             }
         }
+    }
+
+    private void Pos2(Vector3 pos)
+    {
+       
     }
 
     //rotates 
