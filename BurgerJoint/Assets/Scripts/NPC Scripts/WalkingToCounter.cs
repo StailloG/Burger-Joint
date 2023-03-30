@@ -12,7 +12,7 @@ public class WalkingToCounter : MonoBehaviour
     //start pos is (0.06, 0.01, 19.61)
     private Vector3 rotate;
     private Vector3 enterRestaurantPos = new Vector3(0.06f, 0.01f, -19.27f);
-    private Vector3 walkThruRestaurantPos;
+    private Vector3 walkThruRestaurantPos = new Vector3(5.83f, 0.01f, -22.64f);
     private Vector3 walkToCounterPos;
 
     private float rotation1 = 122.69f;
@@ -21,6 +21,7 @@ public class WalkingToCounter : MonoBehaviour
     private void FixedUpdate()
     {
         Pos1(enterRestaurantPos);
+        
     }
 
     /* if player isn't inside the restaurant yet,
@@ -32,18 +33,23 @@ public class WalkingToCounter : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime);
 
-            if(transform.position == new Vector3(0.06f, 0.01f, -19.27f))
+            if (transform.position == new Vector3(0.06f, 0.01f, -19.27f))
             {
                 //Rotate the 1st time
                 Rotate(rotation1);
                 firstPosDone = true;
+
+                if (transform.position == new Vector3(0.06f, 0.01f, -19.27f))
+                {
+                    Pos2(walkThruRestaurantPos);
+                }
             }
         }
     }
 
     private void Pos2(Vector3 pos)
     {
-       
+            transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime);
     }
 
     //rotates 
