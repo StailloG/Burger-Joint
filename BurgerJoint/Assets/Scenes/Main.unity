@@ -16409,13 +16409,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924221064}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95523fb2f7ad92147bc77d776d977d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   customer: {fileID: 1831774973}
   speed: 5
+  firstPosDone: 0
+  secondPosDone: 0
 --- !u!1001 &1937358484
 PrefabInstance:
   m_ObjectHideFlags: 0
