@@ -8,11 +8,16 @@ public class WalkingInRoute : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private int waypointIndex = 0;
 
+    private Vector3 v3;
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         //goes to the 1st waypoint
         transform.position = waypoints[waypointIndex].transform.position;
+
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -33,6 +38,15 @@ public class WalkingInRoute : MonoBehaviour
             if (transform.position == waypoints[waypointIndex].transform.position)
             {
                 waypointIndex += 1;
+
+                if (waypointIndex == 2)
+                {
+                    transform.rotation = Quaternion.Euler(v3.x, 122.69f, v3.z);
+                }
+                if (waypointIndex == 3)
+                {
+                    transform.rotation = Quaternion.Euler(v3.x, 180f, v3.z);
+                }
             }
         }
     }
