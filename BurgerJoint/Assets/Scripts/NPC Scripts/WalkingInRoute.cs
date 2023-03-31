@@ -7,17 +7,15 @@ public class WalkingInRoute : MonoBehaviour
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float speed = 5f;
     [SerializeField] private int waypointIndex = 0;
-
     private Vector3 v3;
-    Animator anim;
+
+    [SerializeField] NPCAnimation npcAnim;
 
     // Start is called before the first frame update
     void Start()
     {
         //goes to the 1st waypoint
         transform.position = waypoints[waypointIndex].transform.position;
-
-        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -30,46 +28,48 @@ public class WalkingInRoute : MonoBehaviour
      */
     private void Move()
     {
-        if (waypointIndex <= waypoints.Length - 1)
+        if (waypointIndex < waypoints.Length)
         {
-            //move enemy from current waypoint to the next one
+            //move customer from current waypoint to the next one
             transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, speed * Time.deltaTime);
 
+            RotateTowardsObject();
+
+            //traveling through waypoints
             if (transform.position == waypoints[waypointIndex].transform.position)
             {
                 waypointIndex += 1;
-                /*
-                if (waypointIndex == 2)
-                {
-                    transform.rotation = Quaternion.Euler(v3.x, 122.69f, v3.z);
-                }
-                if (waypointIndex == 3)
-                {
-                    transform.rotation = Quaternion.Euler(v3.x, 180f, v3.z);
-                }*/
-                RotateTowardsObject();
             }
+
+            npcAnim.PlayWalkAnim();
+        }
+        else
+        {
+            npcAnim.PlayIdleAnim();
         }
     }
 
     private void RotateTowardsObject()
     {
+        //Debug.Log(waypointIndex);
+        //Debug.Log(waypoints.Length);
+
+        //check against out of bounds error
+        if (waypointIndex > waypoints.Length)
+        {
+            return;
+        }
+
         //determine the direction to rotate towards 
         Vector3 targetDirection = waypoints[waypointIndex].position - transform.position;
         
         // The step size is equal to speed times frame time.
-        float singleStep = speed * Time.deltaTime * 100;
+        float singleStep = speed * Time.deltaTime * 7f;
         
         // Rotate the forward vector towards the target direction by one step
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
         
-        // Draw a ray pointing at our target in
-        Debug.DrawRay(transform.position, newDirection, Color.red);
-        
         // Calculate a rotation a step closer to the target and applies rotation to this object
         transform.rotation = Quaternion.LookRotation(newDirection);
-
-        
-        
     }
 }
