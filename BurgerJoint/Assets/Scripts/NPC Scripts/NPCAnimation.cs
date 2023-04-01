@@ -14,7 +14,7 @@ public class NPCAnimation : MonoBehaviour
 
     public void PlayIdleAnim()
     {
-        anim.SetFloat("Blend", 0.01f);
+        anim.SetFloat("Blend", 0.02f);
     }
 
     public void PlayWalkAnim()

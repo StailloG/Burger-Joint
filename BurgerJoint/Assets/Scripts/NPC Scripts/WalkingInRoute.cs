@@ -7,7 +7,6 @@ public class WalkingInRoute : MonoBehaviour
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float speed = 5f;
     [SerializeField] private int waypointIndex = 0;
-    private Vector3 v3;
 
     [SerializeField] NPCAnimation npcAnim;
 
