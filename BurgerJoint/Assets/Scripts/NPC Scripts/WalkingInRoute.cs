@@ -13,7 +13,6 @@ public class WalkingInRoute : MonoBehaviour
     [SerializeField] NPCAnimation npcAnim;
 
     private bool isMoving = true;
-    public UnityEvent OnFinishMoving;  
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +57,7 @@ public class WalkingInRoute : MonoBehaviour
     private void FinishMovingThroughWayPoints()
     {
         if (isMoving == false) return;
-        OnFinishMoving?.Invoke();
+        GetComponent<DeliveryCounter>().SendOrder();
         npcAnim.PlayIdleAnim();
         isMoving = false;
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeliveryCounter : BaseCounter
 {
     [SerializeField] private RecipeSO personRecipe;
+    [SerializeField] private OrderBoardUI orderBoardUI;
     public override void Interact(PlayerMovement player)
     {
         if (player.HasKitchenObject())
@@ -69,5 +70,11 @@ public class DeliveryCounter : BaseCounter
        
         
 
+    }
+
+    public void SendOrder()
+    {
+        orderBoardUI.NewOrder(personRecipe);
+        
     }
 }

@@ -8,9 +8,9 @@ public class OrderBoardUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
 
 
-    public void NewOrder()
+    public void NewOrder(RecipeSO recipeSo)
     {
-        text.text = "TEESTING NEW ORDER CUSTOMER WOOOOOOO";
+        text.text ="Order 1: " + recipeSo.recipeName;
     }
 
 }
