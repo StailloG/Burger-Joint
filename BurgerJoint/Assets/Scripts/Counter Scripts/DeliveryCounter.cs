@@ -69,7 +69,7 @@ public class DeliveryCounter : BaseCounter
        //say feedback based on the points
        
         
-
+        orderBoardUI.ClearOrder();
     }
 
     public void SendOrder()
