@@ -6,6 +6,7 @@ public class DeliveryCounter : BaseCounter
 {
     [SerializeField] private RecipeSO personRecipe;
     [SerializeField] private OrderBoardUI orderBoardUI;
+    [SerializeField] private NPCAudio npcAudio;
     public override void Interact(PlayerMovement player)
     {
         if (player.HasKitchenObject())
@@ -63,7 +64,15 @@ public class DeliveryCounter : BaseCounter
            }
            
        }
-       
+
+       if (plateContentsMatchesRecipe)
+       {
+           npcAudio.PlayGoodReview();
+       }
+       else
+       {
+           npcAudio.PlayBadReview();
+       }
        
        //calculate the points
        //say feedback based on the points
@@ -75,6 +84,6 @@ public class DeliveryCounter : BaseCounter
     public void SendOrder()
     {
         orderBoardUI.NewOrder(personRecipe);
-        
+        npcAudio.PlayIntroGreeting();
     }
 }

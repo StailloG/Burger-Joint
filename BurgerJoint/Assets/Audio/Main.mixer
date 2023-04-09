@@ -160,11 +160,31 @@ AudioMixerSnapshotController:
     1d689ec064f37a54eb19bf32adeb2b42: -11.400904
     fa4003621eebabd46b91c547f738bce6: -20.610773
     e15447448ed7c644e93f62b15cffaee5: 0.04171297
+    e565af95296c2954c855dad1d54a40ff: -5.3230715
     ed6daf276533f0b4180e28f1c309943a: -10.345207
     599eee1870538c942ac753f958356427: -9.833286
     e2d9624984e7e94408ac845a70330e3e: -24.900745
     806cd3ccab4591e4094a68d8e90a6bb4: 5432
   m_TransitionOverrides: {}
+--- !u!243 &-6684807027319889601
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NPC
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 6e5d76d83568559499a60e5426346436
+  m_Children: []
+  m_Volume: e565af95296c2954c855dad1d54a40ff
+  m_Pitch: 2ba018a3725b3af48899cbbc2e11ad84
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 7571417598932351958}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-6642311365385354450
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -392,6 +412,7 @@ AudioMixerController:
     - 15cc1911f19c4394f800537a3276f228
     - b4b4259c774186e4ab6f04fbfa7e810d
     - f33407f0e0f7c2e4f9d70e9d7c1bfb61
+    - 6e5d76d83568559499a60e5426346436
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: -7307831985932192957}
@@ -715,6 +736,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &7571417598932351958
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: b78d375f732ebaf41b0001d515c382bf
+  m_EffectName: Attenuation
+  m_MixLevel: 47f32486c814e064297b9352121f5aca
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &7837570429819177139
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -763,6 +798,7 @@ AudioMixerGroupController:
   - {fileID: -6642311365385354450}
   - {fileID: 443550948546939727}
   - {fileID: -8518138199047056426}
+  - {fileID: -6684807027319889601}
   m_Volume: 4626fe89e21cc95449d3f518550e7cfa
   m_Pitch: 310143df79902164d93088132ec87203
   m_Send: 00000000000000000000000000000000
