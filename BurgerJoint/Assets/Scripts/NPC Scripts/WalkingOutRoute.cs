@@ -15,10 +15,4 @@ public class WalkingOutRoute : MonoBehaviour
         //goes to the 1st exit waypoint
         transform.position = waypoints[waypointIndex].transform.position;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

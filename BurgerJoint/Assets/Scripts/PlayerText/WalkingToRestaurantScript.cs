@@ -40,7 +40,6 @@ public class WalkingToRestaurantScript : MonoBehaviour
         {
             isPlayerCollide = false;
         }
-        StartCoroutine(TextFewSec());
     }
 
     /*
