@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class WalkingInRoute : MonoBehaviour
+public class CustomerWalkingInRoute : MonoBehaviour
 {
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float speed = 5f;

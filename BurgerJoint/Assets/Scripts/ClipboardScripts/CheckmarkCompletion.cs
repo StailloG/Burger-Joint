@@ -14,11 +14,15 @@ public class CheckmarkCompletion : MonoBehaviour
 
     public TodoListDisplay list;
 
+    [Header("Used in Other Scripts")]
+    public bool tasksCompleted;
+
     void Start()
     {
         sweepCheckmark.enabled = false;
         wipeCheckmark.enabled = false;
         trashCheckmark.enabled = false;
+        tasksCompleted = false;
     }
 
     void Update()
@@ -31,6 +35,8 @@ public class CheckmarkCompletion : MonoBehaviour
         {
             FinishedWiping();
         }
+
+        allTasksCompleted();
 
     }
 
@@ -62,6 +68,15 @@ public class CheckmarkCompletion : MonoBehaviour
     private void TrashTakenOut()
     {
 
+    }
+
+    public void allTasksCompleted()
+    {
+        if (wipeAction.actionAreas.Count == 0 && sweepAction.actionAreas.Count == 0)
+        {
+            tasksCompleted = true;
+            Debug.Log("Speak to coworker now to finish the sweeping task!");
+        }
     }
 
 }

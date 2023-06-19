@@ -25,7 +25,8 @@ public class TodoListDisplay : MonoBehaviour
     [SerializeField] private bool isPlayerNear = false;
     [SerializeField] private bool hasList = false;
 
-    public bool proceed;
+    [Header("Used in other Scripts")]
+    public bool proceed = false;
 
 
     void Start()
@@ -71,7 +72,7 @@ public class TodoListDisplay : MonoBehaviour
      */
     private void OpenListFromClipboard()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space) && proceed == true) 
         {
             displayList.enabled = true;
             text.gameObject.SetActive(false);

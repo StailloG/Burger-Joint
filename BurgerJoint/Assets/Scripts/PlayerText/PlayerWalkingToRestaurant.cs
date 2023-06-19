@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class WalkingToRestaurantScript : MonoBehaviour
+public class PlayerWalkingToRestaurant : MonoBehaviour
 {
     //variables
     public TextMeshProUGUI textDisplay;
