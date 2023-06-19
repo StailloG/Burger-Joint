@@ -8,11 +8,14 @@ using UnityEngine;
 /// 3. player is now able to do the to-do list.
 /// 
 /// Part 1:
-/// 4. after todo list is done, coworker walks outside to take out trash.
-/// 5. skinwalker takes coworker, so coworker doesn't come back.
-/// 6. customers walk in.
-/// 7. player serves customers.
-/// 8. 
+/// 4. after todo list is done, player can now speak to the coworker again.
+/// 
+/// 5. coworker will teach player how to cook, then 3-4 customers start to walk in.
+/// 6. after the 1st wave of customers is then coworker walks outside to take out trash.
+/// 7. skinwalker takes coworker, so coworker doesn't come back.
+/// 8. some player dialogue, then another wave of customers come through.
+/// 9. 
+/// 10. 
 /// </summary>
 public class SequenceOfEvents : MonoBehaviour
 {
