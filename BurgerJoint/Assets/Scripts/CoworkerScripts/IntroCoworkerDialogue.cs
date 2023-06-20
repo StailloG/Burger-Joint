@@ -30,6 +30,7 @@ public class IntroCoworkerDialogue : MonoBehaviour
 
     void Introduction()
     {
+        //TODO: coworker dialogue
         Debug.Log("Can now pick up to do list!");
         proceed = true;
     }

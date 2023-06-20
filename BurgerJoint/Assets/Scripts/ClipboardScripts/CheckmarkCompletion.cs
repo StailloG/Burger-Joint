@@ -52,7 +52,7 @@ public class CheckmarkCompletion : MonoBehaviour
         }
        
     }
-
+    
     private void FinishedWiping()
     {
         if (list.displayList.enabled == true)
@@ -75,7 +75,6 @@ public class CheckmarkCompletion : MonoBehaviour
         if (wipeAction.actionAreas.Count == 0 && sweepAction.actionAreas.Count == 0)
         {
             tasksCompleted = true;
-            Debug.Log("Speak to coworker now to finish the sweeping task!");
         }
     }
 

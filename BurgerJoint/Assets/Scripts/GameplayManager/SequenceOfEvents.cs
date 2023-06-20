@@ -30,6 +30,7 @@ public class SequenceOfEvents : MonoBehaviour
     void Update()
     {
         From_Coworker_to_TodoList();
+        From_List_to_Coworker();
     }
 
     /* If player finished speaking to coworker, then
@@ -46,9 +47,12 @@ public class SequenceOfEvents : MonoBehaviour
     /* Once player finished todo list, then
      * coworker walks out to take the trash
      */
-    public void From_List_to_Trash()
+    public void From_List_to_Coworker()
     {
-
+        if (listComplete.tasksCompleted == true)
+        {
+            Debug.Log("Speak to coworker that you completed the tasks!");
+        }
     }
 
 
