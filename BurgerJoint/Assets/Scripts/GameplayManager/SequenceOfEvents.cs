@@ -52,6 +52,7 @@ public class SequenceOfEvents : MonoBehaviour
         if (listComplete.tasksCompleted == true)
         {
             Debug.Log("Speak to coworker that you completed the tasks!");
+            //TODO: create another script that controls when text pops up
         }
     }
 

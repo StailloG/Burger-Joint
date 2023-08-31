@@ -10,6 +10,12 @@ public class IntroCoworkerDialogue : MonoBehaviour
 
     [Header("Used in other Scripts")]
     public bool proceed;
+    public bool inDialogueMode;
+
+    public Dialogue dialogue;
+    [SerializeField] private int canOnlyPressEOnce = 0;
+
+    public CheckmarkCompletion listComplete;
 
 
     // Start is called before the first frame update
@@ -17,22 +23,31 @@ public class IntroCoworkerDialogue : MonoBehaviour
     {
         canSpeak = false;
         proceed = false;
+        inDialogueMode = false;
     }
 
-    // Update is called once per frame
+    //first time speaking to coworker
     void Update()
     {
-        if (canSpeak == true && Input.GetKeyDown(KeyCode.E))
+        if (canSpeak == true && Input.GetKeyDown(KeyCode.E) & canOnlyPressEOnce == 0)
         {
-            Introduction();
+            inDialogueMode = true;
+            IntroductionDialogue();
+            canOnlyPressEOnce++;
         }
     }
 
-    void Introduction()
+    void IntroductionDialogue()
     {
-        //TODO: coworker dialogue
+        dialogue.StartDialogue();
+
         Debug.Log("Can now pick up to do list!");
         proceed = true;
+    }
+
+    void ListCompleteDialogue()
+    {
+        dialogue.StartDialogue();
     }
 
     private void OnTriggerEnter(Collider other)

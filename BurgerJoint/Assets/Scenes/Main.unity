@@ -13297,6 +13297,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSpeak: 0
   proceed: 0
+  inDialogueMode: 0
+  dialogue: {fileID: 1737797645}
+  canOnlyPressEOnce: 0
+  listComplete: {fileID: 833472566}
 --- !u!1 &1209961053
 GameObject:
   m_ObjectHideFlags: 0
@@ -19296,9 +19300,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1036915148}
   lines:
+  - How's it goin'! You're gonna miss me, aren't ya?
+  - Yup, today's my last day! I'm gonna miss you too buddy.
+  - No need to worry, NightVale's a couple of flights..
+  - ..and drives, and trains, & boats away!
+  - Anyways, you better get started on that to-do list before we start serving customers.
   - Oh, you're done? I'll take the trash out later.
   - I see some customers coming up in the distance.
-  textSpeed: 0.1
+  textSpeed: 0.06
+  coworkerDialogue: {fileID: 1209757540}
 --- !u!1 &1738661571
 GameObject:
   m_ObjectHideFlags: 0

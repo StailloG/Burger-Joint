@@ -11,30 +11,24 @@ public class Dialogue : MonoBehaviour
 
     private int index;
 
+    public IntroCoworkerDialogue coworkerDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
         dialogueText.text = string.Empty;
-        StartDialogue();
+        //StartDialogue();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && coworkerDialogue.inDialogueMode == true)
         {
-            if (dialogueText.text == lines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                dialogueText.text = lines[index];
-            }
+            ContinueText();
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
         index = 0;
         StartCoroutine(TypeLine());
@@ -49,7 +43,7 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void NextLine()
+    public void NextLine()
     {
         if (index < lines.Length - 1)
         {
@@ -60,6 +54,19 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+        }
+    }
+
+    public void ContinueText()
+    {
+        if (dialogueText.text == lines[index])
+        {
+            NextLine();
+        }
+        else
+        {
+            StopAllCoroutines();
+            dialogueText.text = lines[index];
         }
     }
 }
