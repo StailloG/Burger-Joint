@@ -5,25 +5,25 @@ using TMPro;
 
 public class IntroCoworkerDialogue : MonoBehaviour
 {
-    private GameObject player;
-    [SerializeField] private bool canSpeak;
-
     [Header("Used in other Scripts")]
     public bool proceed;
     public bool inDialogueMode;
 
-    public Dialogue dialogue;
+    [Header("Variable")]
+    [SerializeField] private bool canSpeak;
     [SerializeField] private int canOnlyPressEOnce = 0;
+    [SerializeField] private bool questionPlayer = false;
 
-    public CheckmarkCompletion listComplete;
+    [Header("Scripts")]
+    public Dialogue dialogue;
+    //public CheckmarkCompletion listComplete;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         canSpeak = false;
         proceed = false;
         inDialogueMode = false;
+        questionPlayer = false;
     }
 
     //first time speaking to coworker
@@ -45,9 +45,10 @@ public class IntroCoworkerDialogue : MonoBehaviour
         proceed = true;
     }
 
-    void ListCompleteDialogue()
+    void ListNotCompleteDialogue()
     {
-        dialogue.StartDialogue();
+
+        Debug.Log("You haven't completed your tasks yet");
     }
 
     private void OnTriggerEnter(Collider other)
