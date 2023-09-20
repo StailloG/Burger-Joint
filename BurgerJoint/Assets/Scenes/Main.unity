@@ -5106,7 +5106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40499989583c9024eb51da9acaeae5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coDialogue: {fileID: 1209757540}
   todoList: {fileID: 833472562}
   listComplete: {fileID: 833472566}
   proceedToTodoList: 0
@@ -9843,7 +9842,7 @@ GameObject:
   - component: {fileID: 905346409}
   - component: {fileID: 905346408}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GrayBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13283,7 +13282,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2559295, y: 4.519512, z: 2.023867}
   m_Center: {x: 0.6404339, y: 2.5738328, z: 0.4642331}
---- !u!114 &1209757540
+--- !u!114 &1209757542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13292,15 +13291,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209757536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8561bffd3f02ca3499399b03cd9aac5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f4e3f08919a0ac46a0018174f22ed64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canSpeak: 0
-  proceed: 0
-  inDialogueMode: 0
-  dialogue: {fileID: 1737797645}
-  canOnlyPressEOnce: 0
-  listComplete: {fileID: 833472566}
+  playerNear: 0
+  dialogueScript: {fileID: 1209757543}
+--- !u!114 &1209757543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209757536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a46e8200e45fe54a8efe334246dbee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 1036915148}
+  lines:
+  - How's it going! You're gonna miss me, aren't ya?
+  - Yup, today's my last day! I'm gonna miss you too buddy.
+  - No need to worry, Night Vale's a couple of flights away...
+  - and drives, and trains, and boats away!
+  - Anyways, you better get started on that to-do list before we start serving customers.
+  textSpeed: 0.06
+  index: 0
+  dialogueBox: {fileID: 1737797641}
 --- !u!1 &1209961053
 GameObject:
   m_ObjectHideFlags: 0
@@ -19306,7 +19323,8 @@ MonoBehaviour:
   - ..and drives, and trains, & boats away!
   - Anyways, you better get started on that to-do list before we start serving customers.
   textSpeed: 0.06
-  coworkerDialogue: {fileID: 1209757540}
+  index: 0
+  dialogueBox: {fileID: 1737797641}
 --- !u!1 &1738661571
 GameObject:
   m_ObjectHideFlags: 0

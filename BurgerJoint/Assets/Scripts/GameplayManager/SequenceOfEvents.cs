@@ -20,7 +20,6 @@ using UnityEngine;
 public class SequenceOfEvents : MonoBehaviour
 {
     [Header("Scripts")]
-    public IntroCoworkerDialogue coDialogue;
     public TodoListDisplay todoList;
     public CheckmarkCompletion listComplete;
 
@@ -38,10 +37,7 @@ public class SequenceOfEvents : MonoBehaviour
      */
     public void From_Coworker_to_TodoList()
     {
-        if (coDialogue.proceed == true)
-        {
-            todoList.proceed = true;
-        }
+       
     }
 
     /* Once player finished todo list, then

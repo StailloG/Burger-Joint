@@ -8,24 +8,21 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public string[] lines;
     public float textSpeed;
-
     public int index;
 
-    public IntroCoworkerDialogue coworkerDialogue;
+    public GameObject dialogueBox;
+
 
     // Start is called before the first frame update
     void Start()
     {
         dialogueText.text = string.Empty;
-        //StartDialogue();
+        dialogueBox.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && coworkerDialogue.inDialogueMode == true)
-        {
-            ContinueText();
-        }
+        
     }
 
     public void StartDialogue()

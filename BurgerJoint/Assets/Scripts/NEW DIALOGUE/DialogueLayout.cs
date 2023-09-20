@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class DialogueLayout : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private bool playerNear = false;
+    public Dialogue dialogueScript;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (playerNear == true & Input.GetKeyDown(KeyCode.Space))
+        {
+            //Debug.Log("Can now speak to coworker");
+            dialogueScript.ContinueText();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Player")
+        {
+            playerNear = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name == "Player")
+        {
+            playerNear = false;
+        } 
     }
 }
