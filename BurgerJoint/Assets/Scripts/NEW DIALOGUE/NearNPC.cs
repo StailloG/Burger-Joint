@@ -2,19 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueLayout : MonoBehaviour
+public class NearNPC : MonoBehaviour
 {
-    [SerializeField] private bool playerNear = false;
-    public Dialogue dialogueScript;
-
-    void Update()
-    {
-        if (playerNear == true & Input.GetKeyDown(KeyCode.Space))
-        {
-            //Debug.Log("Can now speak to coworker");
-            dialogueScript.ContinueText();
-        }
-    }
+    public bool playerNear = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +19,6 @@ public class DialogueLayout : MonoBehaviour
         if (other.name == "Player")
         {
             playerNear = false;
-        } 
+        }
     }
 }

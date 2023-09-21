@@ -2417,7 +2417,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 77.255, y: -30, z: 0}
 --- !u!1001 &174827169
 PrefabInstance:
@@ -2750,7 +2750,7 @@ Transform:
   - {fileID: 1299807867}
   - {fileID: 272643570}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &210292222
 MonoBehaviour:
@@ -4446,7 +4446,7 @@ Transform:
   - {fileID: 66254684}
   - {fileID: 414944343}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &376450603
 PrefabInstance:
@@ -5122,7 +5122,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &435916309
 GameObject:
@@ -6464,7 +6464,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &573442512
 MonoBehaviour:
@@ -7060,7 +7060,7 @@ Transform:
   - {fileID: 1196392947}
   - {fileID: 605342745}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &625230962
 GameObject:
@@ -7431,7 +7431,7 @@ Transform:
   - {fileID: 2126956799}
   - {fileID: 2085721958}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &694501015 stripped
 Transform:
@@ -8726,7 +8726,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &829821907
 PrefabInstance:
@@ -9209,7 +9209,7 @@ Transform:
   - {fileID: 558773983}
   - {fileID: 2028890143}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &855841277
 PrefabInstance:
@@ -12294,6 +12294,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 19ca3635ff743634681f3c5a7d377c34, type: 3}
   m_PrefabInstance: {fileID: 1461437102}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1085876954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1085876956}
+  - component: {fileID: 1085876955}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1085876955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085876954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ee4d268ca6b3842b98ebeb7f03556f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1085876956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085876954}
+  m_LocalRotation: {x: 0.6029825, y: -0.2021951, z: 0.16156867, w: 0.75460243}
+  m_LocalPosition: {x: 0, y: 3, z: -12.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1087461777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cbec1c2715de91d43b0dd84abcf6cea6, type: 3}
@@ -12791,7 +12835,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1176311153
 GameObject:
@@ -13282,7 +13326,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2559295, y: 4.519512, z: 2.023867}
   m_Center: {x: 0.6404339, y: 2.5738328, z: 0.4642331}
---- !u!114 &1209757542
+--- !u!114 &1209757545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13291,33 +13335,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209757536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f4e3f08919a0ac46a0018174f22ed64, type: 3}
+  m_Script: {fileID: 11500000, guid: 000c64b0310fc824790f1718b7ca6f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    npcName: The CoWorker
+    sentences:
+    - How's it going! You're gonna miss me, aren't ya?
+    - Yup, today's my last day! I'm gonna miss you too buddy.
+    - No need to worry, Night Vale's a couple of flights away...
+    - and drives, and trains, and boats away!
+    - Anyways, you better get started on that to-do list before we start serving
+      customers.
+  npc: {fileID: 1209757546}
+--- !u!114 &1209757546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209757536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5c2fd2854bd1649a3d4f804a6b3e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerNear: 0
-  dialogueScript: {fileID: 1209757543}
---- !u!114 &1209757543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209757536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a46e8200e45fe54a8efe334246dbee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: {fileID: 1036915148}
-  lines:
-  - How's it going! You're gonna miss me, aren't ya?
-  - Yup, today's my last day! I'm gonna miss you too buddy.
-  - No need to worry, Night Vale's a couple of flights away...
-  - and drives, and trains, and boats away!
-  - Anyways, you better get started on that to-do list before we start serving customers.
-  textSpeed: 0.06
-  index: 0
-  dialogueBox: {fileID: 1737797641}
 --- !u!1 &1209961053
 GameObject:
   m_ObjectHideFlags: 0
@@ -14236,7 +14279,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1279448142
 PrefabInstance:
@@ -18448,7 +18491,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1650579515 stripped
 GameObject:
@@ -18890,7 +18933,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1682317809
 MonoBehaviour:
@@ -19047,7 +19090,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1725927255
 PrefabInstance:
@@ -19223,7 +19266,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1737797641
 GameObject:
@@ -19236,14 +19279,13 @@ GameObject:
   - component: {fileID: 1737797642}
   - component: {fileID: 1737797644}
   - component: {fileID: 1737797643}
-  - component: {fileID: 1737797645}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1737797642
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19303,28 +19345,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737797641}
   m_CullTransparentMesh: 1
---- !u!114 &1737797645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737797641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a46e8200e45fe54a8efe334246dbee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: {fileID: 1036915148}
-  lines:
-  - How's it goin'! You're gonna miss me, aren't ya?
-  - Yup, today's my last day! I'm gonna miss you too buddy.
-  - No need to worry, NightVale's a couple of flights..
-  - ..and drives, and trains, & boats away!
-  - Anyways, you better get started on that to-do list before we start serving customers.
-  textSpeed: 0.06
-  index: 0
-  dialogueBox: {fileID: 1737797641}
 --- !u!1 &1738661571
 GameObject:
   m_ObjectHideFlags: 0
@@ -20974,7 +20994,7 @@ Transform:
   - {fileID: 768413121}
   - {fileID: 892748732}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1869357854
 MonoBehaviour:
@@ -21144,7 +21164,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1874743436
 MonoBehaviour:
@@ -24254,7 +24274,7 @@ Transform:
   - {fileID: 977494853}
   - {fileID: 1755407336}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2133499444
 MonoBehaviour:
