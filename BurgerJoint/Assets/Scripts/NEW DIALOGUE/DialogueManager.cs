@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences; //FIFO first in, first out
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
 
     // Start is called before the first frame update
     void Start()
@@ -14,7 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueBrackeys dialogue)
     {
-        Debug.Log("Starting conversation with " + dialogue.npcName);
+        nameText.text = dialogue.npcName;
 
         sentences.Clear();
 
@@ -36,11 +39,13 @@ public class DialogueManager : MonoBehaviour
 
         string sentence = sentences.Dequeue();
         Debug.Log(sentence);
+        //dialogueText.text = sentence;
     }
 
     public void EndDialogue()
     {
         Debug.Log("End of conversation");
+        
     }
 
 }

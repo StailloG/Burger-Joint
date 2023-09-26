@@ -8,11 +8,14 @@ public class DialogueTrigger : MonoBehaviour
 
     public NearNPC npc;
 
+    public bool start = false;
+
     public void Update()
     {
         if (npc.playerNear == true && Input.GetKeyDown(KeyCode.Space))
         {
             TriggerDialogue();
+            start = true;
         }
     }
 
