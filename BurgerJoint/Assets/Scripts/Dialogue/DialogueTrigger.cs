@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public DialogueBrackeys dialogue;
+    public Dialogue dialogue;
 
-    public NearNPC npc;
-
-    public bool start = false;
-
-    public void Update()
+    private void Update()
     {
-        if (npc.playerNear == true && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             TriggerDialogue();
-            start = true;
         }
     }
 

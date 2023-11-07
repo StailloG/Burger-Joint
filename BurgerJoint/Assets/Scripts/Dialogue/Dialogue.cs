@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class DialogueBrackeys
+public class Dialogue
 {
-    public string npcName;
+    public string name;
 
-    [TextArea(3, 10)]
+    [TextArea(3, 10)] //dialogue box
     public string[] sentences;
 }

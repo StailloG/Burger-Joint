@@ -3431,6 +3431,11 @@ Transform:
   - {fileID: 912230320}
   - {fileID: 611710147}
   - {fileID: 2102026913}
+  - {fileID: 1730683370}
+  - {fileID: 1169611489}
+  - {fileID: 1649623239}
+  - {fileID: 1278955574}
+  - {fileID: 821575998}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4944,10 +4949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f22d88242a5e04d9457ed8908ccab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 1432162088}
-  lines:
-  - My name is peterson, I wonder what is for lunch
-  textSpeed: 35
 --- !u!1 &414944342
 GameObject:
   m_ObjectHideFlags: 0
@@ -5257,7 +5258,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &435916309
 GameObject:
@@ -8990,13 +8991,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821575994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6222, y: 1.0481, z: -68.9}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -25.992233, y: 35.298733, z: -16.497894}
   m_LocalScale: {x: 70.185646, y: 1.7471335, z: 1.7437341}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_Father: {fileID: 244527298}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &829821907
 PrefabInstance:
@@ -12593,8 +12594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ee4d268ca6b3842b98ebeb7f03556f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 559527228}
-  dialogueText: {fileID: 206410338}
 --- !u!4 &1085876956
 Transform:
   m_ObjectHideFlags: 0
@@ -13102,13 +13101,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169611485}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.5649, y: 1.0481, z: 61.6665}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8051338, y: 35.298733, z: 114.0686}
   m_LocalScale: {x: 25.20411, y: 1.7471335, z: 1.7437341}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_Father: {fileID: 244527298}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1176311153
 GameObject:
@@ -13611,17 +13610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000c64b0310fc824790f1718b7ca6f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    npcName: The CoWorker
-    sentences:
-    - How's it going! You're gonna miss me, aren't ya?
-    - Yup, today's my last day! I'm gonna miss you too buddy.
-    - No need to worry, Night Vale's a couple of flights away...
-    - and drives, and trains, and boats away!
-    - Anyways, you better get started on that to-do list before we start serving
-      customers.
-  npc: {fileID: 1209757546}
-  start: 0
 --- !u!114 &1209757546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13634,7 +13622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5c2fd2854bd1649a3d4f804a6b3e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNear: 0
 --- !u!4 &1209757547 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 56d438aa45281654e978b72888a6dc54, type: 3}
@@ -14552,13 +14539,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278955570}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -38.54, y: 1.0481, z: -4.4041}
-  m_LocalScale: {x: 130.67009, y: 1.7471335, z: 1.7437341}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -61.910034, y: 35.298733, z: 47.99801}
+  m_LocalScale: {x: 130.67009, y: 1.7471335, z: 1.7437342}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_Father: {fileID: 244527298}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1279448142
 PrefabInstance:
@@ -15315,8 +15302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6f215dda89bf04fa65a6a2a57054c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contDialogueMethod: {fileID: 1085876955}
-  startBool: {fileID: 1209757545}
 --- !u!1 &1333451731
 GameObject:
   m_ObjectHideFlags: 0
@@ -18810,13 +18795,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649623235}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 33.3, y: 1.0481, z: -4.4052}
-  m_LocalScale: {x: 130.67009, y: 1.7471335, z: 1.7437341}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 9.929966, y: 35.298733, z: 47.996906}
+  m_LocalScale: {x: 130.67009, y: 1.7471335, z: 1.7437342}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_Father: {fileID: 244527298}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1650579515 stripped
 GameObject:
@@ -19585,13 +19570,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730683366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.8772, y: 1.0481, z: 61.6665}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -43.24723, y: 35.298733, z: 114.0686}
   m_LocalScale: {x: 39.035957, y: 1.7471335, z: 1.7437341}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_Father: {fileID: 244527298}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1737797641
 GameObject:
