@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        //Debug.Log("Starting conversation with " + dialogue.name);
+        Debug.Log("Starting conversation with " + dialogue.name);
         nameText.text = dialogue.name;
 
         sentences.Clear(); //clear prev convo
@@ -42,7 +42,7 @@ public class DialogueManager : MonoBehaviour
 
         //if there's still convo left to say
         string sentence = sentences.Dequeue();
-        //Debug.Log(sentence);
+        Debug.Log(sentence);
         dialogueText.text = sentence;
     }
 
