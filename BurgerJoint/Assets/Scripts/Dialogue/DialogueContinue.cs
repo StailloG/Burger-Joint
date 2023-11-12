@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DialogueContinue : MonoBehaviour
 {
-    public DialogueTrigger trigger;
+    public DialogueTrigger triggerScript;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (triggerScript.inConvo == true && Input.GetKeyDown(KeyCode.E)) //if space doesn't work, try e
         {
             TriggerNextDialogue();
-        }    
+        }
     }
 
     public void TriggerNextDialogue()
