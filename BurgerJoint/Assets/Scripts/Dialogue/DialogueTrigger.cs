@@ -6,7 +6,6 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     public bool inConvo = false;
-    //public bool canContDialogue = false;
 
     private void Update()
     {
@@ -15,11 +14,6 @@ public class DialogueTrigger : MonoBehaviour
             TriggerDialogue(); //starts conversation
             inConvo = true;
         }
-
-        //if (inConvo == true)
-        //{
-        //    canContDialogue = true;
-        //}
     }
 
     public void TriggerDialogue()

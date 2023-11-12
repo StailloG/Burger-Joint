@@ -6,6 +6,9 @@ public class DialogueContinue : MonoBehaviour
 {
     public DialogueTrigger triggerScript;
 
+    //TODO: if near NPC logic
+    //TODO: appear/disappear name & dialogue text
+
     void Update()
     {
         if (triggerScript.inConvo == true && Input.GetKeyDown(KeyCode.E)) //if space doesn't work, try e

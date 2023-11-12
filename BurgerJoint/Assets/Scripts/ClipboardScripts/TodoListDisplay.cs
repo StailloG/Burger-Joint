@@ -68,7 +68,7 @@ public class TodoListDisplay : MonoBehaviour
 
     /*
      * if player is opening list from clipboard for the first time
-     * delete the list on the clipboard.
+     * delete the paper/list on the clipboard.
      */
     private void OpenListFromClipboard()
     {

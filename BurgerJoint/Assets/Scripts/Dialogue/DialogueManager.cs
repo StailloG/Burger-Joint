@@ -9,16 +9,24 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+    [Header("Dialogue Objects")]
+    public GameObject displayBox;
+    public GameObject displayName;
+    public GameObject displayDialogue;
 
     private Queue<string> sentences;
 
     void Start()
     {
         sentences = new Queue<string>();
+
+        DialogueSetInactive();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
+        DialogueSetActive();
+
         Debug.Log("Starting conversation with " + dialogue.name);
         nameText.text = dialogue.name;
 
@@ -49,5 +57,20 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         Debug.Log("End of conversation.");
+        DialogueSetInactive();
+    }
+
+    public void DialogueSetInactive()
+    {
+        displayBox.SetActive(false);
+        displayName.SetActive(false);
+        displayDialogue.SetActive(false);
+    }
+
+    public void DialogueSetActive()
+    {
+        displayBox.SetActive(true);
+        displayName.SetActive(true);
+        displayDialogue.SetActive(true);
     }
 }
