@@ -6,7 +6,6 @@ public class DialogueContinue : MonoBehaviour
 {
     public DialogueTrigger triggerScript;
 
-    //TODO: if near NPC logic
     //TODO: appear/disappear name & dialogue text
 
     void Update()

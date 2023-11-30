@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    //public DialogueTrigger dialogueTriggerScript;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -58,6 +60,7 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End of conversation.");
         DialogueSetInactive();
+        FindObjectOfType<DialogueTrigger>().inConvo = false;
     }
 
     public void DialogueSetInactive()

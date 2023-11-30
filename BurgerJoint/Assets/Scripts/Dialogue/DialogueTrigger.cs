@@ -7,11 +7,11 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
     public bool inConvo = false;
 
-    public GameObject NPC;
+    [SerializeField] private bool isNear = false;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isNear == true && Input.GetKeyDown(KeyCode.Space))
         {
             TriggerDialogue(); //starts conversation
             inConvo = true;
@@ -25,11 +25,15 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //TODO: add logic for NPCs
+        if (other.gameObject.CompareTag("Player"))
+        {
+            //Debug.Log("Near coworker");
+            isNear = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        
+        isNear = false;
     }
 }

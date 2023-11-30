@@ -13640,8 +13640,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2559295, y: 4.519512, z: 2.023867}
-  m_Center: {x: 0.6404339, y: 2.5738328, z: 0.4642331}
+  m_Size: {x: 2.2559295, y: 4.519512, z: 2.9795966}
+  m_Center: {x: 0.6404339, y: 2.5738328, z: 0.9420981}
 --- !u!114 &1209757548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13666,7 +13666,7 @@ MonoBehaviour:
     - Ya better get started on that to-do list over there before we start serving
       customers!
   inConvo: 0
-  NPC: {fileID: 0}
+  isNear: 0
 --- !u!114 &1209757549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21604,8 +21604,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880173461}
-  m_LocalRotation: {x: -0, y: 0.83575004, z: -0, w: -0.54911005}
-  m_LocalPosition: {x: 5.1, y: 1.38, z: -33}
+  m_LocalRotation: {x: 0, y: 0.05050605, z: -0, w: -0.9987238}
+  m_LocalPosition: {x: -2.298, y: 1.38, z: -24.996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21614,7 +21614,7 @@ Transform:
   - {fileID: 1176311154}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 246.612, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 354.21, z: 0}
 --- !u!114 &1880173466
 MonoBehaviour:
   m_ObjectHideFlags: 0
