@@ -12520,6 +12520,7 @@ MonoBehaviour:
   displayName: {fileID: 534260852}
   displayDialogue: {fileID: 1192365240}
   order: 0
+  dialogueTriggerScript: {fileID: 1209757548}
 --- !u!4 &1087461777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cbec1c2715de91d43b0dd84abcf6cea6, type: 3}

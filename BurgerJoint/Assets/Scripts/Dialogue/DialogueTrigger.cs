@@ -36,4 +36,9 @@ public class DialogueTrigger : MonoBehaviour
     {
         isNear = false;
     }
+
+    public void InConvoFalse()
+    {
+        inConvo = false;
+    }
 }
