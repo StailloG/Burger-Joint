@@ -14,9 +14,11 @@ public class DialogueManager : MonoBehaviour
     public GameObject displayName;
     public GameObject displayDialogue;
 
+    public int order = 0;
+
     private Queue<string> sentences;
 
-    //public DialogueTrigger dialogueTriggerScript;
+    public DialogueTrigger dialogueTriggerScript;
 
     void Start()
     {
@@ -61,6 +63,9 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End of conversation.");
         DialogueSetInactive();
         FindObjectOfType<DialogueTrigger>().inConvo = false;
+        dialogueTriggerScript.inConvo = false;
+
+        order += 1;
     }
 
     public void DialogueSetInactive()

@@ -12519,6 +12519,7 @@ MonoBehaviour:
   displayBox: {fileID: 468506416}
   displayName: {fileID: 534260852}
   displayDialogue: {fileID: 1192365240}
+  order: 0
 --- !u!4 &1087461777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cbec1c2715de91d43b0dd84abcf6cea6, type: 3}
@@ -13680,6 +13681,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerScript: {fileID: 1209757548}
+--- !u!4 &1209757550 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 56d438aa45281654e978b72888a6dc54, type: 3}
+  m_PrefabInstance: {fileID: 1559233611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1209757551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209757536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7659ad0dc26c884a91abf78b05f43a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpList: {fileID: 833472562}
+  orderNum: {fileID: 1085876957}
 --- !u!1 &1209961053
 GameObject:
   m_ObjectHideFlags: 0
@@ -17847,6 +17867,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ea08a09b114d540880cb75e2e1e88f, type: 3}
+--- !u!1 &1576944847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1576944848}
+  - component: {fileID: 1576944850}
+  - component: {fileID: 1576944849}
+  m_Layer: 0
+  m_Name: During Todo List Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1576944848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576944847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1209757550}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1576944849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576944847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b44c659a3642b2409614b671fa7e72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerScript: {fileID: 1576944850}
+--- !u!114 &1576944850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576944847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a92c80a02af98b4a952632560422024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: The Coworker
+    sentences:
+    - Are you finished with those tasks? We can't get the show started 'til you finish.
+  inConvo: 0
+  isNear: 0
 --- !u!4 &1580403351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d4a1c64a4c7646c4a9ab1e4d526ee583, type: 3}

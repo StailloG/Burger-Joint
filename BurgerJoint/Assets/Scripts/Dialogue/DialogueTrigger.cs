@@ -9,11 +9,11 @@ public class DialogueTrigger : MonoBehaviour
 
     [SerializeField] private bool isNear = false;
 
-    private void Update()
+    void Update()
     {
         if (isNear == true && Input.GetKeyDown(KeyCode.Space))
         {
-            TriggerDialogue(); //starts conversation
+            TriggerDialogue();
             inConvo = true;
         }
     }
@@ -27,7 +27,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //Debug.Log("Near coworker");
+            Debug.Log("Near coworker");
             isNear = true;
         }
     }

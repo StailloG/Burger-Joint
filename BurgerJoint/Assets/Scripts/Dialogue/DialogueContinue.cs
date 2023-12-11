@@ -6,11 +6,9 @@ public class DialogueContinue : MonoBehaviour
 {
     public DialogueTrigger triggerScript;
 
-    //TODO: appear/disappear name & dialogue text
-
     void Update()
     {
-        if (triggerScript.inConvo == true && Input.GetKeyDown(KeyCode.E)) //if space doesn't work, try e
+        if (triggerScript.inConvo == true && Input.GetKeyDown(KeyCode.E))
         {
             TriggerNextDialogue();
         }
