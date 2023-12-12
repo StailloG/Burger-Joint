@@ -9,6 +9,8 @@ public class DialogueTrigger : MonoBehaviour
 
     [SerializeField] private bool isNear = false;
 
+    public bool firstInteraction = true;
+
     void Update()
     {
         if (isNear == true && Input.GetKeyDown(KeyCode.Space))
