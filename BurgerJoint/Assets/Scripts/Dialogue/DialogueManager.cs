@@ -63,11 +63,6 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End of conversation.");
         DialogueSetInactive();
         dialogueTrigger.inConvo = false;
-
-        //if (dialogueTrigger.firstInteraction == true)
-        //{
-        //    dialogueTrigger.firstInteraction = false;
-        //}
     }
 
     public void DialogueSetInactive()

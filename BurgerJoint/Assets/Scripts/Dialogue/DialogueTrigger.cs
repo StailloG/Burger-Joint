@@ -9,7 +9,7 @@ public class DialogueTrigger : MonoBehaviour
 
     [SerializeField] private bool isNear = false;
 
-    public bool firstInteraction = true;
+    public bool firstInteraction = false;
 
     void Update()
     {
@@ -17,6 +17,8 @@ public class DialogueTrigger : MonoBehaviour
         {
             TriggerDialogue();
             inConvo = true;
+
+            firstInteraction = true;
         }
     }
 
