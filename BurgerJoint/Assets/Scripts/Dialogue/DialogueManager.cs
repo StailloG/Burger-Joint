@@ -18,7 +18,10 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
-    public DialogueTrigger dialogueTrigger;
+    [Header("Coworker Dialogue")]
+    public DialogueTrigger firstDialogueTrigger;
+    public DialogueTrigger secondDialogueTrigger;
+    public DialogueTrigger thirdDialogueTrigger;
 
     void Start()
     {
@@ -62,7 +65,9 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End of conversation.");
         DialogueSetInactive();
-        dialogueTrigger.inConvo = false;
+        firstDialogueTrigger.inConvo = false;
+        secondDialogueTrigger.inConvo = false;
+        thirdDialogueTrigger.inConvo = false;
     }
 
     public void DialogueSetInactive()

@@ -55,7 +55,7 @@ public class CoworkerDialogueOrder : MonoBehaviour
     {
         //set new convo
         //disable the dialogue on coworker
-        firstDialogueTrigger.SetActive(false);
+        //firstDialogueTrigger.SetActive(false);
         secondDialogueTrigger.SetActive(true);
     }
 
