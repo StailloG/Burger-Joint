@@ -12843,6 +12843,7 @@ MonoBehaviour:
     sentences:
     - Oh, you're done? I'll take the trash out later.
     - Cheers to my final shift!
+    - Get ready to start the shift, I see a customer walking in.
   inConvo: 0
   isNear: 0
   firstInteraction: 1
