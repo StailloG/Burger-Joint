@@ -12790,6 +12790,7 @@ GameObject:
   - component: {fileID: 1122994364}
   - component: {fileID: 1122994366}
   - component: {fileID: 1122994365}
+  - component: {fileID: 1122994367}
   m_Layer: 0
   m_Name: After Todo List Dialogue
   m_TagString: Untagged
@@ -12841,9 +12842,23 @@ MonoBehaviour:
     name: The Coworker
     sentences:
     - Oh, you're done? I'll take the trash out later.
+    - Cheers to my final shift!
   inConvo: 0
   isNear: 0
   firstInteraction: 1
+--- !u!65 &1122994367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122994363}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9521098, y: 4.7754464, z: 3.7307377}
+  m_Center: {x: 0.47605473, y: 2.58551, z: 1.3653684}
 --- !u!1001 &1125003369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13816,6 +13831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpList: {fileID: 833472562}
   dialogueTriggerScript: {fileID: 5099822}
+  list: {fileID: 833472566}
   endedFirstDialogue: 0
   secondDialogue: 0
   thirdDialogue: 0
@@ -18052,6 +18068,8 @@ MonoBehaviour:
     name: The Coworker
     sentences:
     - Are you finished with those tasks? We can't get the show started 'til you finish.
+    - Let me know when you're finished with thoses tasks. I was thinking of taking
+      care of the trash tonight.
   inConvo: 0
   isNear: 0
   firstInteraction: 1

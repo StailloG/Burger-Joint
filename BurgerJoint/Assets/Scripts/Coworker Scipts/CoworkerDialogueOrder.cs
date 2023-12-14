@@ -15,6 +15,7 @@ public class CoworkerDialogueOrder : MonoBehaviour
     [Header("Scripts")]
     public TodoListDisplay pickUpList;
     public DialogueTrigger dialogueTriggerScript;
+    public CheckmarkCompletion list;
 
     [Header("Bools")]
     //public bool firstDialogue = false; //before picking up todo list
@@ -43,11 +44,12 @@ public class CoworkerDialogueOrder : MonoBehaviour
             Debug.Log("during todo list");
             DuringTodoList();
         }
-        //else
-        //{
-        //    //third dialogue
-        //    Debug.Log("after completing todo list");
-        //}
+        if (list.tasksCompleted == true)
+        {
+            //third dialogue
+            Debug.Log("after completing todo list");
+            AfterTodoList();
+        }
     }
 
     public void CanNowPickupTodoList()
@@ -58,7 +60,7 @@ public class CoworkerDialogueOrder : MonoBehaviour
     public void DuringTodoList()
     {
         //set new convo
-        //disable the dialogue on coworker
+        //disable the 1st dialogue on coworker
         firstDialogueTrigger.SetActive(false);
         secondDialogueTrigger.SetActive(true);
     }
@@ -66,6 +68,9 @@ public class CoworkerDialogueOrder : MonoBehaviour
     public void AfterTodoList()
     {
         //set final convo
-
+        //disable the 1st & 2nd dialogue on coworker
+        firstDialogueTrigger.SetActive(false);
+        secondDialogueTrigger.SetActive(false);
+        thirdDialogueTrigger.SetActive(true);
     }
 }
