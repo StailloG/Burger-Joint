@@ -123,6 +123,92 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &5099819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5099820}
+  - component: {fileID: 5099822}
+  - component: {fileID: 5099821}
+  - component: {fileID: 5099823}
+  m_Layer: 0
+  m_Name: Before Todo List Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5099820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1209757550}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5099821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b44c659a3642b2409614b671fa7e72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerScript: {fileID: 5099822}
+--- !u!114 &5099822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a92c80a02af98b4a952632560422024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: The Coworker
+    sentences:
+    - Hey buddy, how's it goin'!
+    - Have you heard the news? I'm movin' outta here!
+    - I'm just movin' next door to DaysVille, it's not that far. It's only a train
+      ride away...
+    - ..and a boat, a hike, and a road trip away!
+    - I'll miss you too bud! It's my last day here tonight.
+    - Ya better get started on that to-do list over there before we start serving
+      customers!
+  inConvo: 0
+  isNear: 0
+  firstInteraction: 1
+--- !u!65 &5099823
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099819}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4945042, y: 4.8532724, z: 2.8773348}
+  m_Center: {x: 0.5957008, y: 2.655288, z: 0.93866694}
 --- !u!65 &7398472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12519,10 +12605,10 @@ MonoBehaviour:
   displayBox: {fileID: 468506416}
   displayName: {fileID: 534260852}
   displayDialogue: {fileID: 1192365240}
-  order: 0
-  firstDialogueTrigger: {fileID: 1209757548}
+  firstDialogueTrigger: {fileID: 5099822}
   secondDialogueTrigger: {fileID: 1576944850}
-  thirdDialogueTrigger: {fileID: 0}
+  thirdDialogueTrigger: {fileID: 1122994366}
+  coworkerDialogueOrder: {fileID: 1209757551}
 --- !u!4 &1087461777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cbec1c2715de91d43b0dd84abcf6cea6, type: 3}
@@ -12724,7 +12810,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1209757550}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1122994365
 MonoBehaviour:
@@ -13711,45 +13797,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2559295, y: 4.519512, z: 2.9795966}
   m_Center: {x: 0.6404339, y: 2.5738328, z: 0.9420981}
---- !u!114 &1209757548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209757536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a92c80a02af98b4a952632560422024, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: The Coworker
-    sentences:
-    - Hey buddy, how's it goin'!
-    - Have you heard the news? I'm movin' outta here!
-    - I'm just movin' next door to DaysVille, it's not that far. It's only a train
-      ride away...
-    - ..and a boat, a hike, and a road trip away!
-    - I'll miss you too bud! It's my last day here tonight.
-    - Ya better get started on that to-do list over there before we start serving
-      customers!
-  inConvo: 0
-  isNear: 0
-  firstInteraction: 1
---- !u!114 &1209757549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209757536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b44c659a3642b2409614b671fa7e72b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerScript: {fileID: 1209757548}
 --- !u!4 &1209757550 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 56d438aa45281654e978b72888a6dc54, type: 3}
@@ -13768,11 +13815,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpList: {fileID: 833472562}
-  orderNum: {fileID: 1085876957}
-  dialogueTriggerScript: {fileID: 1209757548}
+  dialogueTriggerScript: {fileID: 5099822}
+  endedFirstDialogue: 0
   secondDialogue: 0
   thirdDialogue: 0
-  firstDialogueTrigger: {fileID: 1209757536}
+  firstDialogueTrigger: {fileID: 5099819}
   secondDialogueTrigger: {fileID: 1576944847}
   thirdDialogueTrigger: {fileID: 1122994363}
 --- !u!1 &1209961053
@@ -17953,6 +18000,7 @@ GameObject:
   - component: {fileID: 1576944848}
   - component: {fileID: 1576944850}
   - component: {fileID: 1576944849}
+  - component: {fileID: 1576944851}
   m_Layer: 0
   m_Name: During Todo List Dialogue
   m_TagString: Untagged
@@ -17973,7 +18021,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1209757550}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1576944849
 MonoBehaviour:
@@ -18007,6 +18055,19 @@ MonoBehaviour:
   inConvo: 0
   isNear: 0
   firstInteraction: 1
+--- !u!65 &1576944851
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576944847}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.605203, y: 4.512393, z: 3.8203428}
+  m_Center: {x: 0.61265177, y: 2.4893348, z: 1.4101709}
 --- !u!4 &1580403351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d4a1c64a4c7646c4a9ab1e4d526ee583, type: 3}

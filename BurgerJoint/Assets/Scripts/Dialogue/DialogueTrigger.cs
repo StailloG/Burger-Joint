@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    [Header("Scripts")]
     public Dialogue dialogue;
+
+    [Header("Bools")]
     public bool inConvo = false;
-
-    [SerializeField] private bool isNear = false;
-
+    public bool isNear = false;
     public bool firstInteraction = false;
 
     void Update()
@@ -39,10 +40,5 @@ public class DialogueTrigger : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isNear = false;
-    }
-
-    public void InConvoFalse()
-    {
-        inConvo = false;
     }
 }

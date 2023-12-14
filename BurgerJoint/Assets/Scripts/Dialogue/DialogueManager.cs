@@ -14,14 +14,15 @@ public class DialogueManager : MonoBehaviour
     public GameObject displayName;
     public GameObject displayDialogue;
 
-    public int order = 0;
-
     private Queue<string> sentences;
 
     [Header("Coworker Dialogue")]
     public DialogueTrigger firstDialogueTrigger;
     public DialogueTrigger secondDialogueTrigger;
     public DialogueTrigger thirdDialogueTrigger;
+
+    [Header("Coworker Dialogue Order")]
+    public CoworkerDialogueOrder coworkerDialogueOrder;
 
     void Start()
     {
@@ -65,9 +66,12 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End of conversation.");
         DialogueSetInactive();
+
+        CoworkerFirstDialogue();
+
         firstDialogueTrigger.inConvo = false;
         secondDialogueTrigger.inConvo = false;
-        thirdDialogueTrigger.inConvo = false;
+        //thirdDialogueTrigger.inConvo = false;
     }
 
     public void DialogueSetInactive()
@@ -82,5 +86,10 @@ public class DialogueManager : MonoBehaviour
         displayBox.SetActive(true);
         displayName.SetActive(true);
         displayDialogue.SetActive(true);
+    }
+
+    public void CoworkerFirstDialogue()
+    {
+        coworkerDialogueOrder.endedFirstDialogue = true;
     }
 }
