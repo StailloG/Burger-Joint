@@ -13,7 +13,8 @@ public class CustomerWalkingInRoute : MonoBehaviour
 
     private bool isMoving = true;
 
-    // Start is called before the first frame update
+    public GBStartWalking gbWalkingScript;
+
     void Start()
     {
         //goes to the 1st waypoint
@@ -22,7 +23,10 @@ public class CustomerWalkingInRoute : MonoBehaviour
 
     void Update()
     {
-        Move();
+        if (gbWalkingScript.GBCanNowWalkIn == true)
+        {
+            Move();
+        }
     }
 
     /* if customer didn't reach last waypoint, customer can move forward.

@@ -8,7 +8,6 @@ using UnityEngine;
  *  - before picking up todo list
  *  - after picking up todo list
  *  - after todo list is complete
- *  - when customer walks in
  */
 public class CoworkerDialogueOrder : MonoBehaviour
 {
@@ -16,6 +15,7 @@ public class CoworkerDialogueOrder : MonoBehaviour
     public TodoListDisplay pickUpList;
     public DialogueTrigger dialogueTriggerScript;
     public CheckmarkCompletion list;
+    public GBStartWalking gbWalking;
 
     [Header("Bools")]
     //public bool firstDialogue = false; //before picking up todo list
@@ -27,7 +27,6 @@ public class CoworkerDialogueOrder : MonoBehaviour
     public GameObject firstDialogueTrigger;
     public GameObject secondDialogueTrigger;
     public GameObject thirdDialogueTrigger;
-
     public void Update()
     {
         //first dialogue
@@ -72,5 +71,8 @@ public class CoworkerDialogueOrder : MonoBehaviour
         firstDialogueTrigger.SetActive(false);
         secondDialogueTrigger.SetActive(false);
         thirdDialogueTrigger.SetActive(true);
+
+        //GB can now walk to restaurant after ~5-10 seconds
+        gbWalking.WalkIntoRestaurant();
     }
 }
