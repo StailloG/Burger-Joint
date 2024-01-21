@@ -7,6 +7,9 @@ public class DeliveryCounter : BaseCounter
     [SerializeField] private RecipeSO personRecipe;
     [SerializeField] private OrderBoardUI orderBoardUI;
     [SerializeField] private NPCAudio npcAudio;
+
+    public GameObject npcDialogueText;
+
     public override void Interact(PlayerMovement player)
     {
         if (player.HasKitchenObject())
@@ -85,5 +88,12 @@ public class DeliveryCounter : BaseCounter
     {
         orderBoardUI.NewOrder(personRecipe);
         npcAudio.PlayIntroGreeting();
+
+        StartDialogueText();
+    }
+
+    public void StartDialogueText()
+    {
+        npcDialogueText.SetActive(true);
     }
 }

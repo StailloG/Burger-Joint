@@ -10400,6 +10400,7 @@ MonoBehaviour:
   personRecipe: {fileID: 11400000, guid: 24de3fe6d7d1f6c468698fbd39706ada, type: 2}
   orderBoardUI: {fileID: 0}
   npcAudio: {fileID: 0}
+  npcDialogueText: {fileID: 0}
 --- !u!1 &912230319
 GameObject:
   m_ObjectHideFlags: 0
@@ -11221,7 +11222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &965887099
 Transform:
   m_ObjectHideFlags: 0
@@ -21127,6 +21128,7 @@ MonoBehaviour:
   personRecipe: {fileID: 11400000, guid: 24de3fe6d7d1f6c468698fbd39706ada, type: 2}
   orderBoardUI: {fileID: 215434710}
   npcAudio: {fileID: 1002004381}
+  npcDialogueText: {fileID: 965887098}
 --- !u!1001 &1836636757
 PrefabInstance:
   m_ObjectHideFlags: 0
