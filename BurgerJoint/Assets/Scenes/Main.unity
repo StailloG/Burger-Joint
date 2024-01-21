@@ -21145,6 +21145,25 @@ MonoBehaviour:
   orderBoardUI: {fileID: 215434710}
   npcAudio: {fileID: 1002004381}
   npcDialogueText: {fileID: 965887098}
+--- !u!114 &1831774981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831774973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74bdfd006522d6842a5858da86e426d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 467301412}
+  - {fileID: 1113258978}
+  speed: 5
+  waypointIndex: 0
+  npcAnim: {fileID: 1831774976}
+  walkOutside: 0
 --- !u!1001 &1836636757
 PrefabInstance:
   m_ObjectHideFlags: 0
