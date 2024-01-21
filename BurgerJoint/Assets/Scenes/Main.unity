@@ -11216,6 +11216,7 @@ GameObject:
   - component: {fileID: 965887102}
   - component: {fileID: 965887101}
   - component: {fileID: 965887100}
+  - component: {fileID: 965887103}
   m_Layer: 0
   m_Name: GB Enter Dialogue
   m_TagString: Untagged
@@ -11285,6 +11286,21 @@ MonoBehaviour:
     - Lemme me find something to order.
   inConvo: 0
   isNear: 0
+--- !u!114 &965887103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965887098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2610a0de2cfebbe4c9d1abbee5cd07b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardText: {fileID: 126080136}
+  boxCol: {fileID: 965887100}
+  boxColActive: 0
 --- !u!1 &977403527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ef911c5b057c9ad4aa2d0b9e1cc34893, type: 3}
