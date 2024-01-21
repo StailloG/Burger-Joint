@@ -6,7 +6,7 @@ using UnityEngine;
  * a script that should determine which dialogue is being played
  * using bools:
  *  - before picking up todo list
- *  - after picking up todo list
+ *  - during picking up todo list
  *  - after todo list is complete
  */
 public class CoworkerDialogueOrder : MonoBehaviour
@@ -18,7 +18,6 @@ public class CoworkerDialogueOrder : MonoBehaviour
     public GBStartWalking gbWalking;
 
     [Header("Bools")]
-    //public bool firstDialogue = false; //before picking up todo list
     public bool endedFirstDialogue = false;
     public bool secondDialogue = false; //after picking up todo list
     public bool thirdDialogue = false; //after todo list is complete
@@ -27,6 +26,7 @@ public class CoworkerDialogueOrder : MonoBehaviour
     public GameObject firstDialogueTrigger;
     public GameObject secondDialogueTrigger;
     public GameObject thirdDialogueTrigger;
+
     public void Update()
     {
         //first dialogue
@@ -34,8 +34,6 @@ public class CoworkerDialogueOrder : MonoBehaviour
         {
             Debug.Log("can now pick up todo list");
             CanNowPickupTodoList();
-
-            //DuringTodoList();
         }
         //second dialogue
         if (pickUpList.proceed == true)
@@ -43,9 +41,9 @@ public class CoworkerDialogueOrder : MonoBehaviour
             Debug.Log("during todo list");
             DuringTodoList();
         }
+        //third dialogue
         if (list.tasksCompleted == true)
         {
-            //third dialogue
             Debug.Log("after completing todo list");
             AfterTodoList();
         }
@@ -62,6 +60,7 @@ public class CoworkerDialogueOrder : MonoBehaviour
         //disable the 1st dialogue on coworker
         firstDialogueTrigger.SetActive(false);
         secondDialogueTrigger.SetActive(true);
+        thirdDialogueTrigger.SetActive(false);
     }
 
     public void AfterTodoList()

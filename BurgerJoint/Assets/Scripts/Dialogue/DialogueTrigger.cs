@@ -10,7 +10,6 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Bools")]
     public bool inConvo = false;
     public bool isNear = false;
-    public bool firstInteraction = false;
 
     void Update()
     {
@@ -18,8 +17,6 @@ public class DialogueTrigger : MonoBehaviour
         {
             TriggerDialogue();
             inConvo = true;
-
-            firstInteraction = true;
         }
     }
 

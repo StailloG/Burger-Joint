@@ -67,7 +67,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End of conversation.");
         DialogueSetInactive();
 
-        CoworkerFirstDialogue();
+        coworkerDialogueOrder.endedFirstDialogue = true;
 
         firstDialogueTrigger.inConvo = false;
         secondDialogueTrigger.inConvo = false;
@@ -86,10 +86,5 @@ public class DialogueManager : MonoBehaviour
         displayBox.SetActive(true);
         displayName.SetActive(true);
         displayDialogue.SetActive(true);
-    }
-
-    public void CoworkerFirstDialogue()
-    {
-        coworkerDialogueOrder.endedFirstDialogue = true;
     }
 }

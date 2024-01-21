@@ -207,8 +207,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4945042, y: 4.8532724, z: 2.8773348}
-  m_Center: {x: 0.5957008, y: 2.655288, z: 0.93866694}
+  m_Size: {x: 2.4945042, y: 4.8532724, z: 3.6001449}
+  m_Center: {x: 0.5957008, y: 2.655288, z: 1.300072}
 --- !u!65 &7398472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12797,7 +12797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1122994364
 Transform:
   m_ObjectHideFlags: 0
@@ -18025,7 +18025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1576944848
 Transform:
   m_ObjectHideFlags: 0
@@ -18070,8 +18070,6 @@ MonoBehaviour:
     name: The Coworker
     sentences:
     - Are you finished with those tasks? We can't get the show started 'til you finish.
-    - Let me know when you're finished with thoses tasks. I was thinking of taking
-      care of the trash tonight.
   inConvo: 0
   isNear: 0
   firstInteraction: 1
