@@ -195,7 +195,6 @@ MonoBehaviour:
       customers!
   inConvo: 0
   isNear: 0
-  firstInteraction: 1
 --- !u!65 &5099823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11204,6 +11203,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f91d190bdabdf4a4b946a0809f9ae20d, type: 3}
+--- !u!1 &965887098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965887099}
+  - component: {fileID: 965887102}
+  - component: {fileID: 965887101}
+  - component: {fileID: 965887100}
+  m_Layer: 0
+  m_Name: GB Enter Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965887099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965887098}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.5, y: -0.45999998, z: -32.99}
+  m_LocalScale: {x: 0.76102, y: 0.76102, z: 0.76102}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1924221065}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &965887100
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965887098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8118303, y: 4.8532724, z: 3.6014025}
+  m_Center: {x: 3.7908778, y: 2.6552877, z: 1.2994426}
+--- !u!114 &965887101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965887098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b44c659a3642b2409614b671fa7e72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerScript: {fileID: 965887102}
+--- !u!114 &965887102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965887098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a92c80a02af98b4a952632560422024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Good Beansss
+    sentences:
+    - Oh my gooddness, my BUNYONS!
+    - Today is hot outside! How you doin'?
+    - ..Uh, oh! You the silent type. It be like that, it be like that!
+    - Lemme me find something to order.
+  inConvo: 0
+  isNear: 0
 --- !u!1 &977403527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ef911c5b057c9ad4aa2d0b9e1cc34893, type: 3}
@@ -12846,7 +12926,6 @@ MonoBehaviour:
     - Get ready to start the shift, I see a customer walking in.
   inConvo: 0
   isNear: 0
-  firstInteraction: 1
 --- !u!65 &1122994367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13835,8 +13914,6 @@ MonoBehaviour:
   list: {fileID: 833472566}
   gbWalking: {fileID: 1924221066}
   endedFirstDialogue: 0
-  secondDialogue: 0
-  thirdDialogue: 0
   firstDialogueTrigger: {fileID: 5099819}
   secondDialogueTrigger: {fileID: 1576944847}
   thirdDialogueTrigger: {fileID: 1122994363}
@@ -18072,7 +18149,6 @@ MonoBehaviour:
     - Are you finished with those tasks? We can't get the show started 'til you finish.
   inConvo: 0
   isNear: 0
-  firstInteraction: 1
 --- !u!65 &1576944851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22437,6 +22513,7 @@ Transform:
   m_Children:
   - {fileID: 912203411}
   - {fileID: 1831774972}
+  - {fileID: 965887099}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

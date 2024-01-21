@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
 
         firstDialogueTrigger.inConvo = false;
         secondDialogueTrigger.inConvo = false;
-        //thirdDialogueTrigger.inConvo = false;
+        thirdDialogueTrigger.inConvo = false;
     }
 
     public void DialogueSetInactive()

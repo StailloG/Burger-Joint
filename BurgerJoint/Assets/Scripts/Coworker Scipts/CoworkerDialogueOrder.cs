@@ -19,8 +19,6 @@ public class CoworkerDialogueOrder : MonoBehaviour
 
     [Header("Bools")]
     public bool endedFirstDialogue = false;
-    public bool secondDialogue = false; //after picking up todo list
-    public bool thirdDialogue = false; //after todo list is complete
 
     [Header("GameObjects")]
     public GameObject firstDialogueTrigger;

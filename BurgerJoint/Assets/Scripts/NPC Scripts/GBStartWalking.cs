@@ -14,7 +14,6 @@ public class GBStartWalking : MonoBehaviour
     public IEnumerator WalkIntoRestaurantSecondss(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        //Debug.Log("Good Beansss can now walk into restaurant!");
         GBCanNowWalkIn = true;
     }
 }
