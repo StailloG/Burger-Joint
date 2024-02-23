@@ -30,19 +30,19 @@ public class CoworkerDialogueOrder : MonoBehaviour
         //first dialogue
         if (endedFirstDialogue == true)
         {
-            Debug.Log("can now pick up todo list");
+            //Debug.Log("can now pick up todo list");
             CanNowPickupTodoList();
         }
         //second dialogue
         if (pickUpList.proceed == true)
         {
-            Debug.Log("during todo list");
+            //Debug.Log("during todo list");
             DuringTodoList();
         }
         //third dialogue
         if (list.tasksCompleted == true)
         {
-            Debug.Log("after completing todo list");
+            //Debug.Log("after completing todo list");
             AfterTodoList();
         }
     }

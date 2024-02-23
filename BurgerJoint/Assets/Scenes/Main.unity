@@ -21682,6 +21682,7 @@ GameObject:
   - component: {fileID: 1880173468}
   - component: {fileID: 1880173469}
   - component: {fileID: 1880173470}
+  - component: {fileID: 1880173471}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -21761,7 +21762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880173461}
   m_LocalRotation: {x: 0, y: 0.05050605, z: -0, w: -0.9987238}
-  m_LocalPosition: {x: -10.93, y: 1.38, z: 54.28}
+  m_LocalPosition: {x: -2.22, y: 1.38, z: -18.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21791,6 +21792,7 @@ MonoBehaviour:
     m_Bits: 128
   inputManager: {fileID: 1880173470}
   kitchenObjectHoldPoint: {fileID: 1176311154}
+  playerIsInMovement: 1
 --- !u!143 &1880173467
 CharacterController:
   m_ObjectHideFlags: 0
@@ -21855,6 +21857,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12745e27d9395e945a35a2275a209be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1880173471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880173461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f13e7f6466c4049aab73e60fc04b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMove: {fileID: 1880173466}
+  dTrigger: {fileID: 5099822}
+  playerMov: {fileID: 1880173466}
 --- !u!65 &1882128772
 BoxCollider:
   m_ObjectHideFlags: 0

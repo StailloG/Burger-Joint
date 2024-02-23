@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour, IKitchenObjectParent
     private KitchenObject kitchenObject;
     [SerializeField] private Transform kitchenObjectHoldPoint;
 
+    public bool playerIsInMovement = true;
+
     void Awake()
     {
         Instance = this;
@@ -66,7 +68,11 @@ public class PlayerMovement : MonoBehaviour, IKitchenObjectParent
 
     void FixedUpdate()
     {
-       HandleMovement();
+        if (playerIsInMovement == true)
+        {
+            HandleMovement();
+        }
+       
        
     }
 
