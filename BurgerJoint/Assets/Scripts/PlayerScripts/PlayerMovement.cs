@@ -72,8 +72,6 @@ public class PlayerMovement : MonoBehaviour, IKitchenObjectParent
         {
             HandleMovement();
         }
-       
-       
     }
 
     private void Update()

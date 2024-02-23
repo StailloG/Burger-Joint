@@ -10,6 +10,9 @@ public class CameraRotation : MonoBehaviour
     public float mouseSensitivity = 100f;
     private float xRotation = 0f;
 
+    public Vector3 target; //need to do something else
+    public PlayerMovement playerMovement;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -17,7 +20,15 @@ public class CameraRotation : MonoBehaviour
 
     void FixedUpdate()
     {
-       CameraControl();
+        if (playerMovement.playerIsInMovement == true)
+        {
+            CameraControl();
+        }
+        //if (playerMovement.playerIsInMovement == false)
+        //{
+        //    Face();
+        //}
+       
     }
 
 
@@ -39,4 +50,9 @@ public class CameraRotation : MonoBehaviour
         //rotate body with camera
         playerBody.Rotate(Vector3.up * mouseX);
     }
+
+    //private void Face()
+    //{
+    //    this.transform.LookAt(target);
+    //}
 }

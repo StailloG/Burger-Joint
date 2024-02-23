@@ -10830,6 +10830,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBody: {fileID: 1880173465}
   mouseSensitivity: 100
+  target: {x: -50, y: 0, z: 0}
+  playerMovement: {fileID: 1880173466}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21869,7 +21871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f13e7f6466c4049aab73e60fc04b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMove: {fileID: 1880173466}
   dTrigger: {fileID: 5099822}
   playerMov: {fileID: 1880173466}
 --- !u!65 &1882128772
